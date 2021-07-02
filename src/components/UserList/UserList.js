@@ -15,6 +15,10 @@ const UserList = (props) => {
 
     }
 
+    // Formularz
+
+    const [inputNameText, setInputNameText] = useState('')
+
 
     return (
         <div>
