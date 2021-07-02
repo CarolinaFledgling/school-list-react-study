@@ -3,13 +3,31 @@ import './Form.css'
 import AddButton from '../AddButton/AddButton'
 
 
-function Form(props) {
+function Form({ setInputNameText, setStudentDetails, studentDetails, inputNameText }) {
+
+    const inputTextNameHandler = (e) => {
+        console.log(e.target.value)
+        setInputNameText(e.target.value)
+    }
+
+    const handlerAddPerson = (e) => {
+        e.preventDefault()
+        console.log('hey')
+        setStudentDetails([
+            ...studentDetails,
+            {
+                name: inputNameText,
+                id: Math.random() * 100,
+            }
+        ]);
+        setInputNameText('');
+    }
     return (
         <div>
             <form >
                 <div>
                     <label htmlfor='name'>Name</label>
-                    <input type='text' placeholder='name' id='name'></input>
+                    <input value={inputNameText} onChange={inputTextNameHandler} type='text' placeholder='name' id='name'></input>
                 </div>
                 <div>
                     <label htmlfor='surname'>Surname</label>
@@ -23,9 +41,9 @@ function Form(props) {
                         <label for='checkAttendance'>Attendance</label>
                         <input type='checkbox' id='checkAttendance'></input>
                     </div> */}
+                <AddButton handlerAddPerson={handlerAddPerson} />
             </form>
 
-            <AddButton />
         </div>
     )
 }

@@ -18,6 +18,7 @@ const UserList = (props) => {
     // Formularz
 
     const [inputNameText, setInputNameText] = useState('')
+    const [studentDetails, setStudentDetails] = useState([])
 
 
     return (
@@ -25,12 +26,15 @@ const UserList = (props) => {
             <div>
                 <h1>Simple List</h1>
             </div>
-            <Form />
-            <ul>
+            <Form inputNameText={inputNameText} studentDetails={studentDetails} setStudentDetails={setStudentDetails} setInputNameText={setInputNameText} />
+            {/* <ul>
                 {users.map(({ name, surname, average, attendance = '0%' }, index) => (
                     <StudentsListItem handleRemove={handleDeletePerson} index={index} name={name} surname={surname} attendance={attendance} average={average} />
                 ))}
-            </ul>
+            </ul> */}
+            <div>
+                <StudentsListItem studentDetails={studentDetails} />
+            </div>
         </div>
     )
 }
