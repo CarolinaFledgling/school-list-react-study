@@ -13,8 +13,8 @@ function UserList() {
             </div>
             <Form />
             <ul>
-                {users.map(({ name, surname, average, attendance = '0%' }) => (
-                    <StudentsListItem name={name} surname={surname} attendance={attendance} average={average} />
+                {users.map(({ name, surname, average, attendance = '0%' }, index) => (
+                    <StudentsListItem index={index} name={name} surname={surname} attendance={attendance} average={average} />
                 ))}
             </ul>
         </div>

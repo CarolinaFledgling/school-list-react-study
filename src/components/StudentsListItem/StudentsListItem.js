@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from '../Button/Button'
+
 
 
 function StudentsListItem(props) {
@@ -8,7 +10,7 @@ function StudentsListItem(props) {
             <p>Name: {props.name}</p>
             <p>Surname: {props.surname}</p>
             <p>Attendance: {props.attendance}</p>
-            <button>X</button>
+            <Button index={props.index} />
         </li>
     )
 }

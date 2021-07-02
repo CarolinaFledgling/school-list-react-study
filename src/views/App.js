@@ -1,5 +1,5 @@
 // import logo from './assets/logo.svg';
-// import './views/App.css';
+// import './App.css';
 
 import UserList from "../components/UserList/UserList";
 
