@@ -2,14 +2,17 @@ import React from 'react'
 
 
 
-const showIndex = (index) => {
-    alert(`student number ${index + 1}`)
-}
+
 
 
 function Button(props) {
+
+    // props.handlerDeletePerson = (name) => {
+    //     props.handleRemove(name)
+    // }
+
     return (
-        <button onClick={() => showIndex(props.index)}>X</button>
+        <button type='button' onClick={() => props.handleRemove(props.name)}>X</button>
     )
 }
 

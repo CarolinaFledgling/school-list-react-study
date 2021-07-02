@@ -1,5 +1,6 @@
 import React from 'react'
 import './Form.css'
+import Button from '../Button/Button'
 
 function Form(props) {
     return (
@@ -22,6 +23,8 @@ function Form(props) {
                         <input type='checkbox' id='checkAttendance'></input>
                     </div> */}
             </form>
+            
+            <Button/>
         </div>
     )
 }

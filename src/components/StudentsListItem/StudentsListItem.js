@@ -10,7 +10,7 @@ function StudentsListItem(props) {
             <p>Name: {props.name}</p>
             <p>Surname: {props.surname}</p>
             <p>Attendance: {props.attendance}</p>
-            <Button index={props.index} />
+            <Button handleRemove={props.handleRemove} index={props.index} />
         </li>
     )
 }
