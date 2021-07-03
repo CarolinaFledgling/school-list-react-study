@@ -21,8 +21,7 @@ function Form({ setInputNameText, setStudentDetails, studentDetails, inputNameTe
             }
         ]);
         console.log('lisa z danymi z formularza tylko imie i id', studentDetails)
-        // jak ja wyswietlic name w komponencie
-
+  
         setInputNameText('');
     }
     return (
