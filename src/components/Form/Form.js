@@ -1,6 +1,7 @@
 import React from 'react'
 import './Form.css'
 import AddButton from '../AddButton/AddButton'
+import './Form.css'
 
 
 function Form({ setInputNameText, setStudentDetails, studentDetails, inputNameText }) {
@@ -20,10 +21,11 @@ function Form({ setInputNameText, setStudentDetails, studentDetails, inputNameTe
                 id: Math.random() * 100,
             }
         ]);
+        
         setInputNameText('');
     }
     return (
-        <div>
+        <div className='form-container'>
             <form >
                 <div>
                     <label htmlfor='name'>Name</label>
@@ -37,10 +39,6 @@ function Form({ setInputNameText, setStudentDetails, studentDetails, inputNameTe
                     <label htmlfor='Attendance'>Attendance</label>
                     <input type='text' placeholder='Attendance: 50%' id='surname'></input>
                 </div>
-                {/* <div>
-                        <label for='checkAttendance'>Attendance</label>
-                        <input type='checkbox' id='checkAttendance'></input>
-                    </div> */}
                 <AddButton handlerAddPerson={handlerAddPerson} />
             </form>
 
