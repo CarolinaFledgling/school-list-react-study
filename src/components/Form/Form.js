@@ -13,7 +13,6 @@ function Form({ setInputNameText, setStudentDetails, studentDetails, inputNameTe
 
     const handlerAddPerson = (e) => {
         e.preventDefault()
-        console.log('hey')
         setStudentDetails([
             ...studentDetails,
             {
@@ -21,7 +20,9 @@ function Form({ setInputNameText, setStudentDetails, studentDetails, inputNameTe
                 id: Math.random() * 100,
             }
         ]);
-        
+        console.log('lisa z danymi z formularza tylko imie i id', studentDetails)
+        // jak ja wyswietlic name w komponencie
+
         setInputNameText('');
     }
     return (

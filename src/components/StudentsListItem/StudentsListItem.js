@@ -6,7 +6,7 @@ import StudentInfo from '../StudentInfo/StudentInfo'
 
 
 function StudentsListItem(props) {
-    console.log(props.users)
+    // console.log(props.users)
     return (
         <div>
             <div>
@@ -21,11 +21,12 @@ function StudentsListItem(props) {
             </div>
             <div>
                 <hr></hr>
+                <p>{props.inputNameText}</p>
                 <h2> New Participants: </h2>
                 {props.studentDetails.map((student) => (
                     <StudentInfo name={student.name} />
                 ))}
-                {/* <Button handleRemove={props.handleRemove} index={props.index} /> */}
+
             </div>
         </div>
     )

@@ -9,14 +9,10 @@ import { users } from '../../data/users'
 
 const UserList = (props) => {
 
-    // const handleDeletePerson = (name) => {
-    //     const filteredUsers = users.filter(user => user.name !== name)
-    //     setUsers(filteredUsers)
 
-    // }
 
     // Formularz
-    //  pobieranie wartosci z inputa 
+    //  pobieranie wartosci z inputa , czy to nie moze byc w FORM ?
     const [inputNameText, setInputNameText] = useState('')
 
     // tworzenie tablicy z podstawowymi danymi o uczniu
@@ -47,7 +43,11 @@ const UserList = (props) => {
                 setStudentDetails={setStudentDetails}
                 setInputNameText={setInputNameText} />
 
-            <StudentsListItem studentDetails={studentDetails} users={users} />
+            <StudentsListItem
+                inputNameText={inputNameText}
+                setInputNameText={setInputNameText}
+                studentDetails={studentDetails}
+                users={users} />
 
         </div>
     )
