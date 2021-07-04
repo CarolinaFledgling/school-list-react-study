@@ -19,24 +19,11 @@ const UserList = (props) => {
     const [studentDetails, setStudentDetails] = useState([])
 
 
-    // Heading
-    // zapytac sie gdzie powinnam ustawic stan np chce po kliknieciu zmienić tytuł?
-
-    const [valueTitle, setValueTitle] = useState('students')
-
-    const handlerChangeTitle = () => {
-        console.log('działa')
-        setValueTitle('teachers')
-    }
-
 
 
     return (
         <div>
-            {/* <h1>list: {valueTitle}</h1>
-            <button onClick={handlerChangeTitle}>change</button> */}
-
-            <Heading valueTitle={valueTitle} handlerChangeTitle={handlerChangeTitle} />
+            <Heading />
             <Form
                 inputNameText={inputNameText}
                 studentDetails={studentDetails}

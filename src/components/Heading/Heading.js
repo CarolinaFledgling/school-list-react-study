@@ -4,25 +4,18 @@ import './Heading.css'
 
 export default function Heading(props) {
 
-    //  zapytać sie dlaczego to tutaj nie działa 
-
-    // const [valueTitle, setValueTitle] = useState('students')
-
-    // const handlerChangeTitle = () => {
-    //     setValueTitle('teachers')
-    // }
+    const [titleList, setTitleList] = useState('Students from school nr 10')
 
 
-    // 
-
-    const handleChange = () => {
-        props.handlerChangeTitle()
+    const handleChangeTitle = () => {
+        setTitleList('No Students title')
     }
+
 
     return (
         <div className='heading-content'>
-            <h1>List: {props.valueTitle} </h1>
-            <ChangeTitleButton onClick={handleChange} />
+            <h1>List: <span className='heading-title'>{titleList}</span> </h1>
+            <ChangeTitleButton onChangeTitle={handleChangeTitle} />
 
         </div>
     )

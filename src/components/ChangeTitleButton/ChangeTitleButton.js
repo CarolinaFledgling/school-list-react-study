@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function ChangeTitleButton() {
+export default function ChangeTitleButton({ onChangeTitle }) {
     return (
-        <button>Change Title</button>
+        <button onClick={onChangeTitle}>Change Title</button>
     )
 }
