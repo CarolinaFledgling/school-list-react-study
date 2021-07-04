@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { users as usersData } from '../../data/users'
-import StudentsListItem from '../StudentsListItem/StudentsListItem'
+import StudentLists from '../StudentLists/StudentLists'
 import Form from '../Form/Form'
 import Heading from '../Heading/Heading'
 import { users } from '../../data/users'
@@ -30,11 +30,7 @@ const UserList = (props) => {
                 setStudentDetails={setStudentDetails}
                 setInputNameText={setInputNameText} />
 
-            <StudentsListItem
-                inputNameText={inputNameText}
-                setInputNameText={setInputNameText}
-                studentDetails={studentDetails}
-                users={users} />
+            <StudentLists users={users} />
 
         </div>
     )

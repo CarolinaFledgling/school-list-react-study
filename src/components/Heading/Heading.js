@@ -11,12 +11,10 @@ export default function Heading(props) {
         setTitleList('No Students title')
     }
 
-
     return (
         <div className='heading-content'>
-            <h1>List: <span className='heading-title'>{titleList}</span> </h1>
+            <h1>List: <span className='heading-title'>{titleList}</span></h1>
             <ChangeTitleButton onChangeTitle={handleChangeTitle} />
-
         </div>
     )
 }
