@@ -16,12 +16,23 @@ function Form({ onSubmit }) {
     const handlerAddPerson = (e) => {
         e.preventDefault()
 
+        if (inputName === '') {
+            return alert('It is necessary to fill in this form 🔥 😋')
+        }
+        if (inputSurname === '') {
+            return alert('It is necessary to fill in this form 🔥 😋')
+        }
+        if (inputAttendace === '') {
+            return alert('It is necessary to fill in this form 🔥 😋')
+        }
+
         const newStudent = {
             name: inputName,
             surname: inputSurname,
             attendace: inputAttendace,
             id: Math.random() * 100,
         }
+        console.log('attendance', inputAttendace)
         onSubmit(newStudent)
 
         setInputName('');
@@ -32,16 +43,16 @@ function Form({ onSubmit }) {
         <div className='form-container'>
             <form >
                 <div>
-                    <label htmlfor='name'>Name</label>
-                    <input value={inputName} onChange={(e) => setInputName(e.target.value)} type='text' placeholder='name' id='name'></input>
+                    <label className='label-form' htmlfor='name'>Name</label>
+                    <input type='text' className="input-form" value={inputName} onChange={(e) => setInputName(e.target.value)} placeholder='name' id='name'></input>
                 </div>
                 <div>
-                    <label htmlfor='surname'>Surname</label>
-                    <input value={inputSurname} onChange={(e) => setInputSurname(e.target.value)} type='text' placeholder='surname' id='surname'></input>
+                    <label className='label-form' htmlfor='surname'>Surname</label>
+                    <input type='text' className="input-form" value={inputSurname} onChange={(e) => setInputSurname(e.target.value)} placeholder='surname' id='surname'></input>
                 </div>
                 <div>
-                    <label htmlfor='Attendance'>Attendance</label>
-                    <input value={inputAttendace} onChange={(e) => setInputAttendace(e.target.value)} type='text' placeholder='Attendance: 50%' id='surname'></input>
+                    <label className='label-form' htmlfor='Attendance'>Attendance</label>
+                    <input type="number" className="input-form" min="0" max="100" value={inputAttendace} onChange={(e) => setInputAttendace(e.target.value)} placeholder='attendance' id='surname'></input>
                 </div>
                 <AddButton handlerAddPerson={handlerAddPerson} />
             </form>

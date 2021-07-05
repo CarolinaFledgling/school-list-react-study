@@ -4,16 +4,16 @@ import ListWithNewStudents from '../ListWithNewStudents/ListWithNewStudents'
 
 
 
-function StudentsListItem({ users }) {
+function StudentsListItem({ users, studentDetails }) {
 
     return (
         <div>
             <div>
-                <ListWithCurrentStudents users={users} />
+                {/* <ListWithCurrentStudents users={users} /> */}
             </div>
             <div>
                 <hr></hr>
-                <ListWithNewStudents />
+                <ListWithNewStudents studentDetails={studentDetails} />
             </div>
         </div>
     )

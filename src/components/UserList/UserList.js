@@ -4,16 +4,22 @@ import Form from '../Form/Form'
 import Heading from '../Heading/Heading'
 import { users } from '../../data/users'
 
+// CRUD
 
+// Create
+// Read 
+// Update 
+// Delete 
+// Search 
 
 const UserList = (props) => {
 
-
-    // tworzenie tablicy z podstawowymi danymi o uczniu
+    // create a sttudent list 
     const [studentDetails, setStudentDetails] = useState([])
 
 
     const onSubmitHandler = (formData) => {
+        console.log(formData)
         setStudentDetails([...studentDetails, formData])
     }
 
@@ -25,8 +31,5 @@ const UserList = (props) => {
         </div>
     )
 }
-
-
-
 
 export default UserList

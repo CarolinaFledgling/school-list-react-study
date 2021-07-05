@@ -1,13 +1,16 @@
 import React from 'react'
 import RemoveButton from '../RemoveButton/RemoveButton'
 
-export default function StudentInfo(props) {
+export default function StudentInfo({ name, surname, attendace }) {
     return (
-        <div>
-            <p>{props.name}</p>
-            <p>{props.surname}</p>
-            <p>{props.attendance}</p>
+        <ul>
+            <li>
+                <p>Name: <span className='list-item'>{name}</span></p>
+                <p>Surname: <span className='list-item'>{surname}</span></p>
+                <p>Attendance: <span className='list-item'>{attendace}%</span></p>
+            </li>
+
             <RemoveButton />
-        </div>
+        </ul>
     )
 }
