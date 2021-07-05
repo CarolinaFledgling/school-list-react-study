@@ -1,12 +1,14 @@
 import React from 'react'
 import StudentInfo from '../StudentInfo/StudentInfo'
 
-export default function ListWithNewStudents({ studentDetails }) {
+export default function ListWithNewStudents({ studentDetails, onDeleteStudent }) {
+
+
     return (
         <div>
             <h2>List With new students</h2>
             {studentDetails.map((student) => {
-                return <StudentInfo name={student.name} surname={student.surname} attendace={student.attendace} />
+                return <StudentInfo onDeleteStudent={onDeleteStudent} id={student.id} name={student.name} surname={student.surname} attendace={student.attendace} />
             })}
         </div>
     )

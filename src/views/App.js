@@ -1,4 +1,3 @@
-// import logo from './assets/logo.svg';
 import './App.css';
 
 import UserList from "../components/UserList/UserList";

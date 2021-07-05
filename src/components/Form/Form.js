@@ -32,7 +32,6 @@ function Form({ onSubmit }) {
             attendace: inputAttendace,
             id: Math.random() * 100,
         }
-        console.log('attendance', inputAttendace)
         onSubmit(newStudent)
 
         setInputName('');

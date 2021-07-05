@@ -4,7 +4,7 @@ import ListWithNewStudents from '../ListWithNewStudents/ListWithNewStudents'
 
 
 
-function StudentsListItem({ users, studentDetails }) {
+function StudentsListItem({ users, studentDetails, onDeleteStudent }) {
 
     return (
         <div>
@@ -13,7 +13,7 @@ function StudentsListItem({ users, studentDetails }) {
             </div>
             <div>
                 <hr></hr>
-                <ListWithNewStudents studentDetails={studentDetails} />
+                <ListWithNewStudents onDeleteStudent={onDeleteStudent} studentDetails={studentDetails} />
             </div>
         </div>
     )

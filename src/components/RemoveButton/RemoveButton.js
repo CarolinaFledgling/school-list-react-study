@@ -1,14 +1,13 @@
 import React from 'react'
 
 
+function RemoveButton({ onDeleteStudent, id }) {
 
-
-
-
-function RemoveButton(props) {
-
+    const handlerDeleteStudent = () => {
+        onDeleteStudent(id)
+    }
     return (
-        <button type='button' onClick={() => props.handleRemove(props.name)}>X</button>
+        <button type='button' onClick={handlerDeleteStudent}>X</button>
     )
 }
 
