@@ -51,9 +51,17 @@ const UserList = (props) => {
         <div>
             <Heading />
             <Form onSubmit={onSubmitHandler} />
-            <StudentLists onDeleteStudent={handlerDeleteStudent} studentDetails={studentDetails} users={users} showCloseBtn={showCloseBtn} />
-            <SearchBar studentDetails={studentDetails} onSearchStudent={onSearchHandler} />
-            <SearchedListStudents searchedStudentList={searchedStudentList} showCloseBtn={showCloseBtn} />
+            <StudentLists
+                onDeleteStudent={handlerDeleteStudent}
+                studentDetails={studentDetails}
+                users={users}
+                showCloseBtn={showCloseBtn} />
+            <SearchBar
+                studentDetails={studentDetails}
+                onSearchStudent={onSearchHandler} />
+            <SearchedListStudents
+                searchedStudentList={searchedStudentList}
+                showCloseBtn={showCloseBtn} />
         </div>
     )
 }

@@ -4,7 +4,8 @@ Create React App is a popular toolchain for building  apps.
 
 ## Description
 
-The goal of this repository is to show the process of my learning React by created simple school list 🔥😊
+The goal of this repository is to learn four basic functions:(CRUD) Create, Read, Update, and Delete and 
+show the process of my learning React by created simple school list 🔥😊
 
 ## Status
 
@@ -13,7 +14,6 @@ Project is: _in progress_,
 ## The goal of this project is to practice:
 
 - Project setup to understanding the fundamentals of JavaScript for React (Requirements)
-- Atomic Design
 - Create React App
 - Nested JSX, the basic syntax of React.js
 - React Component composition
@@ -23,7 +23,7 @@ Project is: _in progress_,
 - React State
 - PropTypes
 - Css Modules
-- ...
+- Hooks: are the new feature introduced in the React 
   ...
 
 ## Available Scripts
