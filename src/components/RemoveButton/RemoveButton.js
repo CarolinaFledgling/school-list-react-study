@@ -12,6 +12,5 @@ function RemoveButton({ onDeleteStudent, id }) {
 }
 
 
-
 export default RemoveButton
 

@@ -20,14 +20,14 @@ const UserList = (props) => {
 
     // added a new student to the list
     const onSubmitHandler = (formData) => {
-        console.log('submit form', formData)
+        console.log('submit form , create a new student ', formData)
         setStudentDetails([...studentDetails, formData])
     }
 
     // delete student 
 
     const handlerDeleteStudent = (id) => {
-        console.log('id from delte btn', id)
+        console.log('id from delte student', id)
         const filterdStudent = studentDetails.filter((student) => {
             return student.id !== id
         })
