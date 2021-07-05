@@ -4,7 +4,7 @@ import Form from '../Form/Form'
 import Heading from '../Heading/Heading'
 import SearchBar from '../SearchBar/SearchBar'
 import { users } from '../../data/users'
-
+import SearchedListStudents from '../SearchedListStudents/SearchedListStudents'
 
 // CRUD
 
@@ -18,6 +18,7 @@ const UserList = (props) => {
 
     // create a student list 
     const [studentDetails, setStudentDetails] = useState([])
+    const [searchedStudentList, setsearchedStudentList] = useState([])
 
     // added a new student to the list
     const onSubmitHandler = (formData) => {
@@ -33,16 +34,12 @@ const UserList = (props) => {
             return student.id !== id
         })
 
-        setStudentDetails([filterdStudent])
+        setStudentDetails(filterdStudent)
     }
 
-    // handle search student
-
-    const handleSearchStudent = (name) => {
-        const searchedStudent = studentDetails.filter((student) => {
-            return student.name !== name
-        })
-        setStudentDetails(searchedStudent)
+    const onSearchHandler = (searchedStudent) => {
+        setsearchedStudentList(searchedStudent)
+        console.log(searchedStudent)
     }
 
 
@@ -52,7 +49,8 @@ const UserList = (props) => {
             <Heading />
             <Form onSubmit={onSubmitHandler} />
             <StudentLists onDeleteStudent={handlerDeleteStudent} studentDetails={studentDetails} users={users} />
-            <SearchBar onSearchStudent={handleSearchStudent} studentDetails={studentDetails} />
+            <SearchBar studentDetails={studentDetails} onSearchStudent={onSearchHandler} />
+            <SearchedListStudents searchedStudentList={searchedStudentList} />
         </div>
     )
 }

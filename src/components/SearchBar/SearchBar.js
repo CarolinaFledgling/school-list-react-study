@@ -1,20 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchedListStudents from '../SearchedListStudents/SearchedListStudents'
 
 
 
-export default function SearchBar({ onSearchStudent }) {
 
-    const handleSearchStudent = (name) => {
-        onSearchStudent(name)
+export default function SearchBar({ studentDetails, onSearchStudent }) {
+
+    const [inputSearchStudent, setinputSearchStudent] = useState('')
+
+    const handleOnChangeSearchStudent = (e) => {
+        setinputSearchStudent(e.target.value)
+
     }
+
+    const handleSearchStudent = () => {
+
+        const searchedStudent = studentDetails.filter((student) => {
+            return student.name.toLowerCase().includes(inputSearchStudent.toLocaleLowerCase())
+        })
+
+        onSearchStudent(searchedStudent)
+        console.log(searchedStudent)
+    }
+
+
+
     return (
         <div>
             <h2>Serach Your Student</h2>
             <label htmlfor='search-student'>Search: </label>
-            <input type="search" id='search-student' />
+            <input value={inputSearchStudent} onChange={handleOnChangeSearchStudent} type="text" id='search-student' />
             <button onClick={handleSearchStudent} type='submit'>Search</button>
-            <SearchedListStudents />
         </div>
     )
 }
