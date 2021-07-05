@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Form.css'
 import AddButton from '../AddButton/AddButton'
 import './Form.css'
+import { v4 as uuidv4 } from 'uuid';
 
 
 function Form({ onSubmit }) {
@@ -30,7 +31,7 @@ function Form({ onSubmit }) {
             name: inputName,
             surname: inputSurname,
             attendace: inputAttendace,
-            id: Math.random() * 100,
+            id: uuidv4(),
         }
         onSubmit(newStudent)
 
