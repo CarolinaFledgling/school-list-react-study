@@ -19,10 +19,12 @@ const UserList = (props) => {
     // create a student list 
     const [studentDetails, setStudentDetails] = useState([])
     const [searchedStudentList, setsearchedStudentList] = useState([])
+    const [showCloseBtn, setShowCloseBtn] = useState(true)
 
     // added a new student to the list
     const onSubmitHandler = (formData) => {
         console.log('submit form , create a new student ', formData)
+        setShowCloseBtn(true)
         setStudentDetails([...studentDetails, formData])
     }
 
@@ -38,6 +40,7 @@ const UserList = (props) => {
     }
 
     const onSearchHandler = (searchedStudent) => {
+        setShowCloseBtn(false)
         setsearchedStudentList(searchedStudent)
         console.log(searchedStudent)
     }
@@ -48,9 +51,9 @@ const UserList = (props) => {
         <div>
             <Heading />
             <Form onSubmit={onSubmitHandler} />
-            <StudentLists onDeleteStudent={handlerDeleteStudent} studentDetails={studentDetails} users={users} />
+            <StudentLists onDeleteStudent={handlerDeleteStudent} studentDetails={studentDetails} users={users} showCloseBtn={showCloseBtn} />
             <SearchBar studentDetails={studentDetails} onSearchStudent={onSearchHandler} />
-            <SearchedListStudents searchedStudentList={searchedStudentList} />
+            <SearchedListStudents searchedStudentList={searchedStudentList} showCloseBtn={showCloseBtn} />
         </div>
     )
 }

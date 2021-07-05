@@ -1,7 +1,7 @@
 import React from 'react'
 import RemoveButton from '../RemoveButton/RemoveButton'
 
-export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id }) {
+export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id, showCloseBtn }) {
     return (
         <ul>
             <li>
@@ -9,7 +9,10 @@ export default function StudentInfo({ name, surname, attendace, onDeleteStudent,
                 <p>Surname: <span className='list-item'>{surname}</span></p>
                 <p>Attendance: <span className='list-item'>{attendace}%</span></p>
             </li>
-            <RemoveButton onDeleteStudent={onDeleteStudent} id={id} />
+            <RemoveButton
+                onDeleteStudent={onDeleteStudent}
+                id={id}
+                showCloseBtn={showCloseBtn} />
         </ul>
     )
 }
