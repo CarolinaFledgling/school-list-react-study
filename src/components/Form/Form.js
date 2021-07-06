@@ -5,7 +5,7 @@ import './Form.css'
 import { v4 as uuidv4 } from 'uuid';
 
 
-function Form({ onSubmit }) {
+function Form({ onSubmit, setshowCloseBtnMainListStudent, setShowCloseBtnSearchStudent }) {
 
     const [inputName, setInputName] = useState('')
     const [inputSurname, setInputSurname] = useState('')
@@ -34,6 +34,8 @@ function Form({ onSubmit }) {
             id: uuidv4(),
         }
         onSubmit(newStudent)
+        setshowCloseBtnMainListStudent(true)
+        setShowCloseBtnSearchStudent(false)
 
         setInputName('');
         setInputSurname('');

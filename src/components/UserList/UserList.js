@@ -19,13 +19,14 @@ const UserList = (props) => {
     // create a student list 
     const [studentDetails, setStudentDetails] = useState([])
     const [searchedStudentList, setsearchedStudentList] = useState([])
-    const [showCloseBtn, setShowCloseBtn] = useState(true)
+    const [showCloseBtnSearchStudent, setShowCloseBtnSearchStudent] = useState(true)
+    const [showCloseBtnMainListStudent, setshowCloseBtnMainListStudent] = useState(false)
 
     // added a new student to the list
     const onSubmitHandler = (formData) => {
-        console.log('submit form , create a new student ', formData)
-        setShowCloseBtn(true)
+        // console.log('submit form , create a new student ', formData)
         setStudentDetails([...studentDetails, formData])
+        console.log('onSubmit', showCloseBtnSearchStudent)
     }
 
     // handle delete student 
@@ -40,9 +41,10 @@ const UserList = (props) => {
     }
 
     const onSearchHandler = (searchedStudent) => {
-        setShowCloseBtn(false)
         setsearchedStudentList(searchedStudent)
-        console.log(searchedStudent)
+        console.log('onSearch', showCloseBtnSearchStudent)
+        console.log('Searched student', searchedStudent)
+
     }
 
 
@@ -50,18 +52,25 @@ const UserList = (props) => {
     return (
         <div>
             <Heading />
-            <Form onSubmit={onSubmitHandler} />
+            <Form
+                onSubmit={onSubmitHandler}
+                setshowCloseBtnMainListStudent={setshowCloseBtnMainListStudent}
+                setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent} />
             <StudentLists
                 onDeleteStudent={handlerDeleteStudent}
                 studentDetails={studentDetails}
                 users={users}
-                showCloseBtn={showCloseBtn} />
+                showCloseBtnSearchStudent={showCloseBtnSearchStudent}
+                showCloseBtnMainListStudent={showCloseBtnMainListStudent}
+            />
             <SearchBar
                 studentDetails={studentDetails}
-                onSearchStudent={onSearchHandler} />
+                onSearchStudent={onSearchHandler}
+                setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent} />
             <SearchedListStudents
                 searchedStudentList={searchedStudentList}
-                showCloseBtn={showCloseBtn} />
+                showCloseBtnSearchStudent={showCloseBtnSearchStudent}
+            />
         </div>
     )
 }

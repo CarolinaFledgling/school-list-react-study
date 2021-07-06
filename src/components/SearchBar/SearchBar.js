@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import SearchedListStudents from '../SearchedListStudents/SearchedListStudents'
 
 
 
 
-export default function SearchBar({ studentDetails, onSearchStudent }) {
+
+export default function SearchBar({ studentDetails, onSearchStudent, setShowCloseBtnSearchStudent }) {
 
     const [inputSearchStudent, setinputSearchStudent] = useState('')
 
@@ -14,13 +14,13 @@ export default function SearchBar({ studentDetails, onSearchStudent }) {
     }
 
     const handleSearchStudent = () => {
-
-        const searchedStudent = studentDetails.filter((student) => {
+        const copyStudentDetails = [...studentDetails]
+        const searchedStudent = copyStudentDetails.filter((student) => {
             return student.name.toLowerCase().includes(inputSearchStudent.toLocaleLowerCase())
         })
-
         onSearchStudent(searchedStudent)
-        console.log(searchedStudent)
+        setShowCloseBtnSearchStudent(false)
+        setinputSearchStudent('')
     }
 
 
