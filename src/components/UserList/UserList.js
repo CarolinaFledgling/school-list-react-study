@@ -55,11 +55,13 @@ const UserList = (props) => {
         setsearchedStudentList([])
     }
 
-
+    // Amount of students 
+    const namberOfStudentsNoun = studentDetails.length !== 1 ? 'students' : 'student';
+    const headingText = `Number of students: ${studentDetails.length} ${namberOfStudentsNoun} on the list`;
 
     return (
         <div>
-            <Heading />
+            <Heading headingText={headingText} />
             <Form
                 onSubmit={onSubmitHandler}
                 setshowCloseBtnMainListStudent={setshowCloseBtnMainListStudent}

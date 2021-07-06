@@ -4,7 +4,7 @@ Create React App is a popular toolchain for building  apps.
 
 ## Description
 
-The goal of this repository is to learn four basic functions:(CRUD) Create, Read, Update, and Delete and 
+The goal of this repository is to learn four basic functions: (CRUD) Create, Read, Update, and Delete and 
 show the process of my learning React by created simple school list 🔥😊
 
 ## Status

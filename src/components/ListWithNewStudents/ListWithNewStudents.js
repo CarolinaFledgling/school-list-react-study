@@ -7,6 +7,8 @@ export default function ListWithNewStudents({ studentDetails, onDeleteStudent, s
     return (
         <div>
             <h2>List With new students</h2>
+            {// zapytac w ul : role="list" className="list-newStudent" aria-labelledby="list-heading"
+            }
             <ul>
                 {studentDetails.map((student) => {
                     return <StudentInfo
