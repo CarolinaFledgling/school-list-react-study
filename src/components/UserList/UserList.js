@@ -40,11 +40,19 @@ const UserList = (props) => {
         setStudentDetails(filterdStudent)
     }
 
+    // handle Searched student
+
     const onSearchHandler = (searchedStudent) => {
         setsearchedStudentList(searchedStudent)
         console.log('onSearch', showCloseBtnSearchStudent)
         console.log('Searched student', searchedStudent)
 
+    }
+
+    //handle clean searched list
+
+    const onCleanSearchlist = () => {
+        setsearchedStudentList([])
     }
 
 
@@ -66,7 +74,8 @@ const UserList = (props) => {
             <SearchBar
                 studentDetails={studentDetails}
                 onSearchStudent={onSearchHandler}
-                setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent} />
+                setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
+                onCleanSearchlist={onCleanSearchlist} />
             <SearchedListStudents
                 searchedStudentList={searchedStudentList}
                 showCloseBtnSearchStudent={showCloseBtnSearchStudent}

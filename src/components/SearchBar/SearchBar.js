@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import CleanSearchedListBtn from '../CleanSearchedListBtn/CleanSearchedListBtn'
 
 
 
 
 
-export default function SearchBar({ studentDetails, onSearchStudent, setShowCloseBtnSearchStudent }) {
+export default function SearchBar({ studentDetails, onSearchStudent, setShowCloseBtnSearchStudent, onCleanSearchlist }) {
 
     const [inputSearchStudent, setinputSearchStudent] = useState('')
 
@@ -23,6 +24,15 @@ export default function SearchBar({ studentDetails, onSearchStudent, setShowClos
         setinputSearchStudent('')
     }
 
+    const handleCleanSearchedList = () => {
+        const copyStudentDetails = [...studentDetails]
+        const searchedStudent = copyStudentDetails.filter((student) => {
+            return student.name.toLowerCase().includes(inputSearchStudent.toLocaleLowerCase())
+        })
+
+        onCleanSearchlist(searchedStudent)
+    }
+
 
 
     return (
@@ -31,6 +41,8 @@ export default function SearchBar({ studentDetails, onSearchStudent, setShowClos
             <label htmlfor='search-student'>Search: </label>
             <input value={inputSearchStudent} onChange={handleOnChangeSearchStudent} type="text" id='search-student' />
             <button onClick={handleSearchStudent} type='submit'>Search</button>
+            {/* <button onClick={handleCleanSearchedList} type='submit'>clean List</button> */}
+            <CleanSearchedListBtn onCleanSearchedList={handleCleanSearchedList} />
         </div>
     )
 }
