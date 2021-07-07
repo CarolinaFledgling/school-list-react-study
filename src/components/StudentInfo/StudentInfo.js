@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import RemoveButton from '../RemoveButton/RemoveButton'
 import SaveButton from '../SaveButton/SaveButton'
+import ActiveInActiveCheckboxBtn from '../ActiveInActiveCheckboxBtn/ActiveInActiveCheckboxBtn'
 
-export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
+export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler, onActiveInputHandler }) {
     const [inputSaveName, setInputSaveName] = useState(name)
     const [inputSaveSurname, setInputSaveSurname] = useState(surname)
     const [inputSaveAttendace, setInputSaveAttendace] = useState(attendace)
@@ -26,6 +27,7 @@ export default function StudentInfo({ name, surname, attendace, onDeleteStudent,
                 <input value={inputSaveAttendace} onChange={(e) => setInputSaveAttendace(e.target.value)} id="input-name" type="text" />
             </div>
             <div className="btn-group">
+                <ActiveInActiveCheckboxBtn onActiveInputHandler={onActiveInputHandler} />
                 <SaveButton
                     onSaveHandler={onSaveHandler}
                     id={id}
@@ -37,6 +39,7 @@ export default function StudentInfo({ name, surname, attendace, onDeleteStudent,
                     id={id}
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
+
                 />
 
             </div>

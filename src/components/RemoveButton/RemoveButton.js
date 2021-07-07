@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function RemoveButton({ onDeleteStudent, id, showCloseBtnSearchStudent,showCloseBtnMainListStudent }) {
+function RemoveButton({ onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent }) {
 
     console.log('Komponent removeBrn', showCloseBtnSearchStudent)
     const handlerDeleteStudent = () => {
@@ -9,8 +9,8 @@ function RemoveButton({ onDeleteStudent, id, showCloseBtnSearchStudent,showClose
     }
     return (
         <div>
-        {showCloseBtnSearchStudent === true ? <button type='button' onClick={handlerDeleteStudent}>X</button> : null}
-        {showCloseBtnMainListStudent === true ? <button type='button' onClick={handlerDeleteStudent}>X</button> : null}
+            {showCloseBtnSearchStudent === true ? <button type='button' onClick={handlerDeleteStudent}>X</button> : null}
+            {showCloseBtnMainListStudent === true ? <button type='button' onClick={handlerDeleteStudent}>X</button> : null}
         </div>
     )
 }

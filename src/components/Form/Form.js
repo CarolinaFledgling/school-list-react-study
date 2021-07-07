@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './Form.css'
 import AddButton from '../AddButton/AddButton'
+import ActiveInActiveCheckboxBtn from '../ActiveInActiveCheckboxBtn/ActiveInActiveCheckboxBtn'
 import './Form.css'
 import { v4 as uuidv4 } from 'uuid';
 
 
-function Form({ onSubmit, setshowCloseBtnMainListStudent, setShowCloseBtnSearchStudent }) {
+function Form({ onSubmit, setshowCloseBtnMainListStudent, setShowCloseBtnSearchStudent, onActiveInputHandler }) {
 
     const [inputName, setInputName] = useState('')
     const [inputSurname, setInputSurname] = useState('')
@@ -56,6 +57,7 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setShowCloseBtnSearchS
                     <label className='label-form' htmlfor='Attendance'>Attendance</label>
                     <input type="number" className="input-form" min="0" max="100" value={inputAttendace} onChange={(e) => setInputAttendace(e.target.value)} placeholder='attendance' id='surname'></input>
                 </div>
+                <ActiveInActiveCheckboxBtn onActiveInputHandler={onActiveInputHandler} />
                 <AddButton handlerAddPerson={handlerAddPerson} />
             </form>
 
