@@ -22,6 +22,8 @@ const UserList = (props) => {
     const [showCloseBtnSearchStudent, setShowCloseBtnSearchStudent] = useState(true)
     const [showCloseBtnMainListStudent, setshowCloseBtnMainListStudent] = useState(false)
 
+
+
     // added a new student to the list
     const onSubmitHandler = (formData) => {
         // console.log('submit form , create a new student ', formData)
@@ -59,6 +61,22 @@ const UserList = (props) => {
     const namberOfStudentsNoun = studentDetails.length !== 1 ? 'students' : 'student';
     const headingText = `Number of students: ${studentDetails.length} ${namberOfStudentsNoun} on the list`;
 
+
+    //  handler Edit fields 
+
+    const onSaveHandler = (id, inputSaveName) => {
+        console.log('id', id)
+        console.log('input save name', inputSaveName)
+        let foundElem = studentDetails.find((elem) => {
+            return elem.id === id
+        })
+        foundElem.name = inputSaveName
+
+        setStudentDetails([...studentDetails])
+        console.log(foundElem)
+
+    }
+
     return (
         <div>
             <Heading headingText={headingText} />
@@ -72,6 +90,7 @@ const UserList = (props) => {
                 users={users}
                 showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                 showCloseBtnMainListStudent={showCloseBtnMainListStudent}
+                onSaveHandler={onSaveHandler}
             />
             <SearchBar
                 studentDetails={studentDetails}

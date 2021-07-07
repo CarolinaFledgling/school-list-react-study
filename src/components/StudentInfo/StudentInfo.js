@@ -1,30 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RemoveButton from '../RemoveButton/RemoveButton'
+import SaveButton from '../SaveButton/SaveButton'
 
-export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent }) {
+export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
+    const [inputSaveName, setInputSaveName] = useState(name)
     return (
 
         <li className="student-details">
             <div className="fields">
-                <input id="input-name" type="text" />
-                <label className="student-name-label" htmlFor="input-name">{name}</label>
+                <label className="student-name-label" htmlFor="input-name">Name:&nbsp;</label>
+                <input value={inputSaveName} onChange={(e) => setInputSaveName(e.target.value)} id="input-name" type="text" />
             </div>
             <div className="fields">
-                <input id="input-name" type="text" />
                 <label className="student-name-label" htmlFor="input-name">
-                    {surname}
+                    Surname:&nbsp;
                 </label>
+                <input id="input-name" type="text" value={surname} />
             </div>
             <div className="fields">
-                <input id="input-name" type="text" />
                 <label className="student-name-label" htmlFor="input-name">
-                    {`${attendace}%`}
+                    Attendace:&nbsp;
                 </label>
+                <input id="input-name" type="text" value={attendace} />
             </div>
             <div className="btn-group">
-                <button type="button" className="btn btn-edit">
-                    Edit <span className="visually-hidden"></span>
-                </button>
+                <SaveButton onSaveHandler={onSaveHandler} id={id} inputSaveName={inputSaveName} name={name}/>
                 <RemoveButton
                     onDeleteStudent={onDeleteStudent}
                     id={id}
