@@ -64,13 +64,18 @@ const UserList = (props) => {
 
     //  handler Edit fields 
 
-    const onSaveHandler = (id, inputSaveName) => {
+    const onSaveHandler = (id, inputSaveName, inputSaveAttendace, inputSaveSurname) => {
         console.log('id', id)
         console.log('input save name', inputSaveName)
+        console.log('input save atte', inputSaveAttendace)
+        console.log('input save surname', inputSaveSurname)
         let foundElem = studentDetails.find((elem) => {
             return elem.id === id
         })
+
         foundElem.name = inputSaveName
+        foundElem.surname = inputSaveSurname
+        foundElem.attendace = inputSaveAttendace
 
         setStudentDetails([...studentDetails])
         console.log(foundElem)

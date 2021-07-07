@@ -4,6 +4,8 @@ import SaveButton from '../SaveButton/SaveButton'
 
 export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
     const [inputSaveName, setInputSaveName] = useState(name)
+    const [inputSaveSurname, setInputSaveSurname] = useState(surname)
+    const [inputSaveAttendace, setInputSaveAttendace] = useState(attendace)
     return (
 
         <li className="student-details">
@@ -15,16 +17,21 @@ export default function StudentInfo({ name, surname, attendace, onDeleteStudent,
                 <label className="student-name-label" htmlFor="input-name">
                     Surname:&nbsp;
                 </label>
-                <input id="input-name" type="text" value={surname} />
+                <input value={inputSaveSurname} onChange={(e) => setInputSaveSurname(e.target.value)} id="input-name" type="text" />
             </div>
             <div className="fields">
                 <label className="student-name-label" htmlFor="input-name">
                     Attendace:&nbsp;
                 </label>
-                <input id="input-name" type="text" value={attendace} />
+                <input value={inputSaveAttendace} onChange={(e) => setInputSaveAttendace(e.target.value)} id="input-name" type="text" />
             </div>
             <div className="btn-group">
-                <SaveButton onSaveHandler={onSaveHandler} id={id} inputSaveName={inputSaveName} name={name}/>
+                <SaveButton
+                    onSaveHandler={onSaveHandler}
+                    id={id}
+                    inputSaveName={inputSaveName}
+                    inputSaveSurname={inputSaveSurname}
+                    inputSaveAttendace={inputSaveAttendace} />
                 <RemoveButton
                     onDeleteStudent={onDeleteStudent}
                     id={id}
