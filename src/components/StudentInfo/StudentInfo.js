@@ -3,7 +3,7 @@ import RemoveButton from '../RemoveButton/RemoveButton'
 import SaveButton from '../SaveButton/SaveButton'
 
 
-export default function StudentInfo({ isActive,name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
+export default function StudentInfo({ isActive,name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent,showEditBtnSearchStudent, showCloseBtnMainListStudent,showEditBtnMainListStudent, onSaveHandler }) {
     const [inputSaveName, setInputSaveName] = useState(name)
     const [inputSaveSurname, setInputSaveSurname] = useState(surname)
     const [inputSaveAttendace, setInputSaveAttendace] = useState(attendace)
@@ -42,12 +42,17 @@ export default function StudentInfo({ isActive,name, surname, attendace, onDelet
                     inputSaveName={inputSaveName}
                     inputSaveSurname={inputSaveSurname}
                     inputSaveAttendace={inputSaveAttendace}
-                    inputSaveIsActive={inputSaveIsActive} />
+                    inputSaveIsActive={inputSaveIsActive} 
+                    showEditBtnSearchStudent={showEditBtnSearchStudent}
+                    showEditBtnMainListStudent={showEditBtnMainListStudent}
+                    />
+                    
                 <RemoveButton
                     onDeleteStudent={onDeleteStudent}
                     id={id}
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
+              
 
                 />
 

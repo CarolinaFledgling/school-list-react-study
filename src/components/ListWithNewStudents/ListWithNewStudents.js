@@ -1,7 +1,7 @@
 import React from 'react'
 import StudentInfo from '../StudentInfo/StudentInfo'
 
-export default function ListWithNewStudents({ studentDetails, onDeleteStudent, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
+export default function ListWithNewStudents({ studentDetails, onDeleteStudent, showEditBtnMainListStudent, showCloseBtnSearchStudent, showEditBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
 
 
     return (
@@ -20,6 +20,8 @@ export default function ListWithNewStudents({ studentDetails, onDeleteStudent, s
                         isActive={student.isActive}
                         showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                         showCloseBtnMainListStudent={showCloseBtnMainListStudent}
+                        showEditBtnSearchStudent={showEditBtnSearchStudent}
+                        showEditBtnMainListStudent={showEditBtnMainListStudent}
                         onSaveHandler={onSaveHandler}
 
                     />

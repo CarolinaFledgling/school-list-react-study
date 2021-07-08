@@ -3,7 +3,7 @@ import React from 'react'
 
 function RemoveButton({ onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent }) {
 
-    console.log('Komponent removeBrn', showCloseBtnSearchStudent)
+    
     const handlerDeleteStudent = () => {
         onDeleteStudent(id)
     }

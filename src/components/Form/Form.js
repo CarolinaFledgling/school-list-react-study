@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import './Form.css'
 import AddButton from '../AddButton/AddButton'
-// import ActiveInActiveCheckboxBtn from '../ActiveInActiveCheckboxBtn/ActiveInActiveCheckboxBtn'
 import './Form.css'
 import { v4 as uuidv4 } from 'uuid';
 
 
-function Form({ onSubmit, setshowCloseBtnMainListStudent, setShowCloseBtnSearchStudent }) {
+function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainListStudent, setShowCloseBtnSearchStudent, setShowEditBtnSearchStudent }) {
 
     const [inputName, setInputName] = useState('')
     const [inputSurname, setInputSurname] = useState('')
@@ -41,6 +40,8 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setShowCloseBtnSearchS
         console.log('dodany student', newStudent)
         setshowCloseBtnMainListStudent(true)
         setShowCloseBtnSearchStudent(false)
+        setShowEditBtnSearchStudent(false)
+        setshowEditBtnMainListStudent(true)
 
         setInputName('');
         setInputSurname('');
@@ -89,7 +90,6 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setShowCloseBtnSearchS
                         checked={activeCheckboxInput}
                         onChange={(e) => setactiveCheckboxInput(e.target.checked)} />
                 </div>
-                {/* <ActiveInActiveCheckboxBtn onActiveInputHandler={onActiveInputHandler} /> */}
                 <AddButton handlerAddPerson={handlerAddPerson} />
             </form>
 

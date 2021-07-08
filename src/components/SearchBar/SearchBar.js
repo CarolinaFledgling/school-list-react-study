@@ -5,7 +5,7 @@ import CleanSearchedListBtn from '../CleanSearchedListBtn/CleanSearchedListBtn'
 
 
 
-export default function SearchBar({ studentDetails, onSearchStudent, setShowCloseBtnSearchStudent, onCleanSearchlist }) {
+export default function SearchBar({ studentDetails, onSearchStudent, setShowCloseBtnSearchStudent, onCleanSearchlist, setShowEditBtnSearchStudent }) {
 
     const [inputSearchStudent, setinputSearchStudent] = useState('')
 
@@ -21,6 +21,7 @@ export default function SearchBar({ studentDetails, onSearchStudent, setShowClos
         })
         onSearchStudent(searchedStudent)
         setShowCloseBtnSearchStudent(false)
+        setShowEditBtnSearchStudent(false)
         setinputSearchStudent('')
     }
 
