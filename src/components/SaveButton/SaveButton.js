@@ -7,8 +7,8 @@ export default function SaveButton({ onSaveHandler, id, inputSaveName, inputSave
     }
     return (
         <div>
-            {showEditBtnSearchStudent === true ? <button type='button' onClick={handlerSaveStudent}>Edit</button> : null}
-            {showEditBtnMainListStudent === true ? <button type='button' onClick={handlerSaveStudent}>Edit</button> : null}
+            {showEditBtnSearchStudent === true ? <button type='button' onClick={handlerSaveStudent}>save/edit</button> : null}
+            {showEditBtnMainListStudent === true ? <button type='button' onClick={handlerSaveStudent}>save/edit</button> : null}
             {/* <button type="button" className="btn btn-edit" onClick={handlerSaveStudent}>Save</button> */}
         </div>
     )

@@ -10,6 +10,7 @@ export default function SearchedListStudents({ searchedStudentList, showCloseBtn
                     name={student.name}
                     surname={student.surname}
                     attendace={student.attendace}
+                    isActive={student.isActive}
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showEditBtnSearchStudent={showEditBtnSearchStudent}
                 />

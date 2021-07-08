@@ -68,17 +68,15 @@ const UserList = (props) => {
 
 
     //  handler Edit fields 
-
     const onSaveHandler = (id, inputSaveName, inputSaveAttendace, inputSaveSurname, inputSaveIsActive) => {
         let foundElem = studentDetails.find((elem) => {
             return elem.id === id
         })
-
         foundElem.name = inputSaveName
         foundElem.surname = inputSaveSurname
         foundElem.attendace = inputSaveAttendace
         foundElem.isActive = inputSaveIsActive
-
+        console.log('foundElem.isActive', foundElem.isActive)
         setStudentDetails([...studentDetails])
 
 
@@ -87,9 +85,6 @@ const UserList = (props) => {
 
     // Amount of Active and Inactive students
     // Count Active student
-
-
-
     const namberOfStudentsActive = countActiveStudent === 0 ? ' no active students on the list 😥' : ` ${countActiveStudent} ✔️`;
     console.log(studentDetails)
 
