@@ -59,7 +59,7 @@ const UserList = (props) => {
 
     //  handler Edit fields 
 
-    const onSaveHandler = (id, inputSaveName, inputSaveAttendace, inputSaveSurname) => {
+    const onSaveHandler = (id, inputSaveName, inputSaveAttendace, inputSaveSurname, inputSaveIsActive) => {
         let foundElem = studentDetails.find((elem) => {
             return elem.id === id
         })
@@ -67,6 +67,7 @@ const UserList = (props) => {
         foundElem.name = inputSaveName
         foundElem.surname = inputSaveSurname
         foundElem.attendace = inputSaveAttendace
+        foundElem.isActive = inputSaveIsActive
 
         setStudentDetails([...studentDetails])
 
@@ -74,9 +75,12 @@ const UserList = (props) => {
     }
 
     // Active checkbox
-    const onActiveInputHandler = (activeCheckboxInput) => {
-        console.log('activeCheckboxInput', activeCheckboxInput)
-    }
+    // const onActiveInputHandler = (activeCheckboxInput) => {
+    //     console.log('activeCheckboxInput', activeCheckboxInput)
+    // }
+
+    // Amount of Active and Inactive students
+
 
     return (
         <div>
@@ -85,8 +89,9 @@ const UserList = (props) => {
                 onSubmit={onSubmitHandler}
                 setshowCloseBtnMainListStudent={setshowCloseBtnMainListStudent}
                 setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
-                onActiveInputHandler={onActiveInputHandler}
-                />
+
+
+            />
             <StudentLists
                 onDeleteStudent={handlerDeleteStudent}
                 studentDetails={studentDetails}
@@ -94,7 +99,7 @@ const UserList = (props) => {
                 showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                 showCloseBtnMainListStudent={showCloseBtnMainListStudent}
                 onSaveHandler={onSaveHandler}
-                onActiveInputHandler={onActiveInputHandler}
+
             />
             <SearchBar
                 studentDetails={studentDetails}

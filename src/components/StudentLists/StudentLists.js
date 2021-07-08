@@ -4,7 +4,7 @@ import ListWithNewStudents from '../ListWithNewStudents/ListWithNewStudents'
 
 
 
-function StudentsListItem({ users, studentDetails, onDeleteStudent, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler, onActiveInputHandler }) {
+function StudentsListItem({ users, studentDetails, onDeleteStudent, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler}) {
 
     return (
         <div>
@@ -19,7 +19,7 @@ function StudentsListItem({ users, studentDetails, onDeleteStudent, showCloseBtn
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
                     onSaveHandler={onSaveHandler}
-                    onActiveInputHandler={onActiveInputHandler}
+            
                 />
             </div>
         </div>

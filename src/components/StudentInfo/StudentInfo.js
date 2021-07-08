@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import RemoveButton from '../RemoveButton/RemoveButton'
 import SaveButton from '../SaveButton/SaveButton'
-import ActiveInActiveCheckboxBtn from '../ActiveInActiveCheckboxBtn/ActiveInActiveCheckboxBtn'
 
-export default function StudentInfo({ name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler, onActiveInputHandler }) {
+
+export default function StudentInfo({ isActive,name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
     const [inputSaveName, setInputSaveName] = useState(name)
     const [inputSaveSurname, setInputSaveSurname] = useState(surname)
     const [inputSaveAttendace, setInputSaveAttendace] = useState(attendace)
+    const [inputSaveIsActive, setInputSaveIsActive] = useState(isActive)
     return (
 
         <li className="student-details">
@@ -26,14 +27,22 @@ export default function StudentInfo({ name, surname, attendace, onDeleteStudent,
                 </label>
                 <input value={inputSaveAttendace} onChange={(e) => setInputSaveAttendace(e.target.value)} id="input-name" type="text" />
             </div>
+            <div>
+                <label htmlfor="active">Active</label>
+                <input
+                    type="checkbox"
+                    name="active"
+                    checked={inputSaveIsActive}
+                    onChange={(e) => setInputSaveIsActive(e.target.checked)} />
+            </div>
             <div className="btn-group">
-                <ActiveInActiveCheckboxBtn onActiveInputHandler={onActiveInputHandler} />
                 <SaveButton
                     onSaveHandler={onSaveHandler}
                     id={id}
                     inputSaveName={inputSaveName}
                     inputSaveSurname={inputSaveSurname}
-                    inputSaveAttendace={inputSaveAttendace} />
+                    inputSaveAttendace={inputSaveAttendace}
+                    inputSaveIsActive={inputSaveIsActive} />
                 <RemoveButton
                     onDeleteStudent={onDeleteStudent}
                     id={id}
