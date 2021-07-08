@@ -23,7 +23,7 @@ const UserList = (props) => {
     const [showCloseBtnMainListStudent, setshowCloseBtnMainListStudent] = useState(false)
     const [showEditBtnSearchStudent, setShowEditBtnSearchStudent] = useState(true)
     const [showEditBtnMainListStudent, setshowEditBtnMainListStudent] = useState(false)
-    const [countActiveStudent, setcountActiveStudent] = useState(0)
+
 
 
 
@@ -32,10 +32,6 @@ const UserList = (props) => {
     // added a new student to the list
     const onSubmitHandler = (formData) => {
         console.log('student po dodaniu', formData)
-        if (formData.isActive === true) {
-            setcountActiveStudent(countActiveStudent + 1)
-        }
-        console.log('liczba aktywnych', countActiveStudent)
         setStudentDetails([...studentDetails, formData])
     }
 
@@ -83,14 +79,38 @@ const UserList = (props) => {
 
 
     // Amount of Active and Inactive students
-    // Count Active student
+    // Count Active student 
+
+    const countActiveStudent = studentDetails.reduce((currentStudent, nextStudent) => {
+
+        if (nextStudent.isActive) {
+            return currentStudent + 1;
+        }
+        return currentStudent
+    }, 0)
+
     const namberOfStudentsActive = countActiveStudent === 0 ? ' no active students on the list 😥' : ` ${countActiveStudent} ✔️`;
     console.log(studentDetails)
+
+
+    // Amount of InActive and Inactive students
+    // Count InActive student 
+    const countInactiveStudent = studentDetails.reduce((currentStudent, nextStudent) => {
+
+        if (nextStudent.isActive === false) {
+            return currentStudent + 1;
+        }
+        return currentStudent
+    }, 0)
+
+    const namberOfStudentsInactive = countInactiveStudent === 0 ? 'no inactive students on the list 😀' : ` ${countInactiveStudent} ✔️`;
+
+
 
     return (
 
         <div>
-            <Heading headingText={headingText} namberOfStudentsActive={namberOfStudentsActive} />
+            <Heading headingText={headingText} namberOfStudentsActive={namberOfStudentsActive} namberOfStudentsInactive={namberOfStudentsInactive} />
             <Form
                 onSubmit={onSubmitHandler}
                 setshowCloseBtnMainListStudent={setshowCloseBtnMainListStudent}

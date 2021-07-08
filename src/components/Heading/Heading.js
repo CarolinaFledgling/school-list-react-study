@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ChangeTitleButton from '../ChangeTitleButton/ChangeTitleButton'
 import './Heading.css'
 
-export default function Heading({ headingText, namberOfStudentsActive }) {
+export default function Heading({ headingText, namberOfStudentsActive, namberOfStudentsInactive }) {
 
     const [titleList, setTitleList] = useState('Students from school nr 10')
 
@@ -16,6 +16,7 @@ export default function Heading({ headingText, namberOfStudentsActive }) {
             <h1>List: <span className='heading-title'>{titleList}</span></h1>
             <h2>{headingText}</h2>
             <h3>Active Students:{namberOfStudentsActive}</h3>
+            <h4>Number of inactive Students: {namberOfStudentsInactive}</h4>
             <ChangeTitleButton onChangeTitle={handleChangeTitle} />
         </div>
     )
