@@ -23,7 +23,6 @@ const UserList = (props) => {
     const [showCloseBtnMainListStudent, setshowCloseBtnMainListStudent] = useState(false)
     const [showEditBtnSearchStudent, setShowEditBtnSearchStudent] = useState(true)
     const [showEditBtnMainListStudent, setshowEditBtnMainListStudent] = useState(false)
-
     const [countActiveStudent, setcountActiveStudent] = useState(0)
 
 

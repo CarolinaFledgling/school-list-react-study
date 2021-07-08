@@ -19,13 +19,14 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
     const handlerAddPerson = (e) => {
         e.preventDefault()
 
-        if (inputName === '') {
-            return alert('It is necessary to fill in this form 🔥 😋')
+        //dlaczego nie działa mi tutaj sprawdzanie długości ?
+        if (!inputName && inputName.length <= 4) {
+            return alert('It is necessary to fill name in this form 🔥 😋')
         }
-        if (inputSurname === '') {
-            return alert('It is necessary to fill in this form 🔥 😋')
+        if (!inputSurname) {
+            return alert('It is necessary to fill surname in this form 🔥 😋')
         }
-        if (inputAttendace === '' && (!Number(inputAttendace))) {
+        if (!inputAttendace && (!Number(inputAttendace))) {
             return alert('Attendace must be a number🔥 😋')
         }
 

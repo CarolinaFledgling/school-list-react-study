@@ -8,6 +8,14 @@ export default function StudentInfo({ isActive,name, surname, attendace, onDelet
     const [inputSaveSurname, setInputSaveSurname] = useState(surname)
     const [inputSaveAttendace, setInputSaveAttendace] = useState(attendace)
     const [inputSaveIsActive, setInputSaveIsActive] = useState(isActive)
+
+    // próba zrobienia Edycji 
+    const [isEditing, setEditing] = useState(false);
+
+    // podzielić to na editingTemplate i viewTemplate?? to maja byc komponenty ? czy display block lub none
+    // <li>{isEditing ? editingTemplate : viewTemplate}</li>
+
+
     return (
 
         <li className="student-details">
