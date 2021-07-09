@@ -1,23 +1,29 @@
 import React, { useState } from 'react'
-import ChangeTitleButton from '../ChangeTitleButton/ChangeTitleButton'
-import './Heading.css'
+import styles from './Heading.module.scss'
+
 
 export default function Heading({ headingText, namberOfStudentsActive, namberOfStudentsInactive }) {
 
-    const [titleList, setTitleList] = useState('Students from school nr 10')
-
-
-    const handleChangeTitle = () => {
-        setTitleList('No Students title')
-    }
-
     return (
-        <div className='heading-content'>
-            <h1>List: <span className='heading-title'>{titleList}</span></h1>
-            <h2>{headingText}</h2>
-            <h3>Active Students:{namberOfStudentsActive}</h3>
-            <h4>Number of inactive Students: {namberOfStudentsInactive}</h4>
-            <ChangeTitleButton onChangeTitle={handleChangeTitle} />
+        <div className={`${styles.container} ${false ? styles.hasBorder : styles.hasBgc}`}>
+            <h1 className={styles.title}>List of students at school 🧑‍🎓</h1>
+            <div className={styles.content}>
+                <div className={styles.boxText}>
+                    <p className={styles.paragraph}>Total:
+                        <span className={styles.span}>{headingText}</span>
+                    </p>
+                </div>
+                <div className={styles.boxText}>
+                    <p className={styles.paragraph}>Active:
+                        <span className={styles.span}>{namberOfStudentsActive}</span>
+                    </p>
+                </div>
+                <div className={styles.boxText}>
+                    <p className={styles.paragraph}>No Active:
+                        <span className={styles.span}>{namberOfStudentsInactive}</span>
+                    </p>
+                </div>
+            </div>
         </div>
     )
 }

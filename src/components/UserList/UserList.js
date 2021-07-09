@@ -48,20 +48,18 @@ const UserList = (props) => {
     }
 
     // handle Searched student
-
     const onSearchHandler = (searchedStudent) => {
         setsearchedStudentList(searchedStudent)
     }
 
     //handle clean searched list
-
     const onCleanSearchlist = () => {
         setsearchedStudentList([])
     }
 
     // Amount of students 
     const namberOfStudentsNoun = studentDetails.length !== 1 ? 'students' : 'student';
-    const headingText = `Number of students: ${studentDetails.length} ${namberOfStudentsNoun} on the list`;
+    const headingText = `${studentDetails.length} ${namberOfStudentsNoun} on the list`;
 
 
     //  handler Edit fields 
@@ -82,7 +80,6 @@ const UserList = (props) => {
 
     // Amount of Active and Inactive students
     // Count Active student 
-
     const countActiveStudent = studentDetails.reduce((currentStudent, nextStudent) => {
 
         if (nextStudent.isActive) {
@@ -91,7 +88,7 @@ const UserList = (props) => {
         return currentStudent
     }, 0)
 
-    const namberOfStudentsActive = countActiveStudent === 0 ? ' no active students on the list 😥' : ` ${countActiveStudent} ✔️`;
+    const namberOfStudentsActive = countActiveStudent === 0 ? ' 0 active students on the list' : ` ${countActiveStudent} ✔️`;
     console.log(studentDetails)
 
 
@@ -105,7 +102,7 @@ const UserList = (props) => {
         return currentStudent
     }, 0)
 
-    const namberOfStudentsInactive = countInactiveStudent === 0 ? 'no inactive students on the list 😀' : ` ${countInactiveStudent} ✔️`;
+    const namberOfStudentsInactive = countInactiveStudent === 0 ? '0 inactive students on the list' : ` ${countInactiveStudent} ✔️`;
 
 
 
@@ -119,9 +116,6 @@ const UserList = (props) => {
                 setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
                 setShowEditBtnSearchStudent={setShowEditBtnSearchStudent}
                 setshowEditBtnMainListStudent={setshowEditBtnMainListStudent}
-
-
-
             />
             <StudentLists
                 onDeleteStudent={handlerDeleteStudent}
@@ -132,7 +126,6 @@ const UserList = (props) => {
                 showEditBtnSearchStudent={showEditBtnSearchStudent}
                 showEditBtnMainListStudent={showEditBtnMainListStudent}
                 onSaveHandler={onSaveHandler}
-
             />
             <SearchBar
                 studentDetails={studentDetails}

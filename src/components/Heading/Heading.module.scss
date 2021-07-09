@@ -1,0 +1,45 @@
+.container{
+   background-color: rgb(255, 255, 255);
+   padding:10px;
+  
+}
+
+.hasBorder{
+   border: 1px solid black;
+}
+
+.title{
+   font-size: 3.4rem;
+   margin-bottom: 1em;
+   text-align: center;
+}
+
+
+.paragraph{
+   font-weight: bold;
+   font-size: 2rem;
+  
+}
+
+.span{
+   margin-top: .5em;
+   font-weight: normal;
+   display: block;
+}
+
+.content{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.boxText{
+   text-align: center;
+   display: flex;
+   align-items: center;
+   height: 20em;
+   padding: 1em;
+   margin:0 1em;
+   flex: 0 1 auto;
+}
