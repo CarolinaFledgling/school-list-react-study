@@ -1,0 +1,29 @@
+.container {
+    padding: 10px;
+    font-size: 2rem;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    margin-right: 10px;
+}
+
+.input {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+.list {
+    font-weight: bold;
+}
+
+.form {
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #f5b700;
+}

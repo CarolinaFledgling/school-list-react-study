@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import './Form.css'
+import styles from './Form.module.scss'
 import AddButton from '../AddButton/AddButton'
-import './Form.css'
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -52,33 +51,33 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
         setactiveCheckboxInput(true)
     }
     return (
-        <div className='form-container'>
-            <form >
+        <div className={styles.container} >
+            <form className={styles.form} >
                 <div>
-                    <label className='label-form' htmlfor='name'>Name</label>
+                    <label className={styles.label} htmlfor='name'>Name</label>
                     <input
                         type='text'
-                        className="input-form"
+                        className={styles.input}
                         value={inputName}
                         onChange={(e) => setInputName(e.target.value)}
                         placeholder='name'
                         id='name' />
                 </div>
                 <div>
-                    <label className='label-form' htmlfor='surname'>Surname</label>
+                    <label className={styles.label} htmlfor='surname'>Surname</label>
                     <input
                         type='text'
-                        className="input-form"
+                        className={styles.input}
                         value={inputSurname}
                         onChange={(e) => setInputSurname(e.target.value)}
                         placeholder='surname'
                         id='surname' />
                 </div>
                 <div>
-                    <label className='label-form' htmlfor='Attendance'>Attendance</label>
+                    <label className={styles.label} htmlfor='Attendance'>Attendance</label>
                     <input
                         type="number"
-                        className="input-form"
+                        className={styles.input}
                         min="0"
                         max="100"
                         value={inputAttendace}
@@ -96,7 +95,7 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
                 <AddButton handlerAddPerson={handlerAddPerson} />
             </form>
 
-        </div>
+        </ div>
     )
 }
 

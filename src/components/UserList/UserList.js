@@ -59,7 +59,7 @@ const UserList = (props) => {
 
     // Amount of students 
     const namberOfStudentsNoun = studentDetails.length !== 1 ? 'students' : 'student';
-    const headingText = `${studentDetails.length} ${namberOfStudentsNoun} on the list`;
+    const headingText = `${studentDetails.length} ${namberOfStudentsNoun}`;
 
 
     //  handler Edit fields 
@@ -88,7 +88,7 @@ const UserList = (props) => {
         return currentStudent
     }, 0)
 
-    const namberOfStudentsActive = countActiveStudent === 0 ? ' 0 active students on the list' : ` ${countActiveStudent} ✔️`;
+    const namberOfStudentsActive = countActiveStudent === 0 ? ' 0 active students' : ` ${countActiveStudent} ✔️`;
     console.log(studentDetails)
 
 
@@ -102,7 +102,7 @@ const UserList = (props) => {
         return currentStudent
     }, 0)
 
-    const namberOfStudentsInactive = countInactiveStudent === 0 ? '0 inactive students on the list' : ` ${countInactiveStudent} ✔️`;
+    const namberOfStudentsInactive = countInactiveStudent === 0 ? '0 inactive students' : ` ${countInactiveStudent} ✔️`;
 
 
 

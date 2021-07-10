@@ -1,12 +1,13 @@
 import React from 'react'
 import StudentInfo from '../StudentInfo/StudentInfo'
+import styles from './ListWithNewStudents.module.scss'
 
 export default function ListWithNewStudents({ studentDetails, onDeleteStudent, showEditBtnMainListStudent, showCloseBtnSearchStudent, showEditBtnSearchStudent, showCloseBtnMainListStudent, onSaveHandler }) {
 
 
     return (
         <div>
-            <h2>List With new students</h2>
+            <h2 className={styles.titleList}>List With new students</h2>
             {// zapytac w ul : role="list" className="list-newStudent" aria-labelledby="list-heading"
             }
             <ul>

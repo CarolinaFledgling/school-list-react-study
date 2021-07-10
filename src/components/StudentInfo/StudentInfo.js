@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import RemoveButton from '../RemoveButton/RemoveButton'
 import SaveButton from '../SaveButton/SaveButton'
+import styles from './StudentInfo.module.scss'
 
 
 export default function StudentInfo({ isActive, name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showEditBtnSearchStudent, showCloseBtnMainListStudent, showEditBtnMainListStudent, onSaveHandler }) {
@@ -13,7 +14,7 @@ export default function StudentInfo({ isActive, name, surname, attendace, onDele
 
     return (
 
-        <div>
+        <div className={styles.container}>
 
             {isEditing ? (
 

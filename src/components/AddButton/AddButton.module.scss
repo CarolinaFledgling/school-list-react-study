@@ -1,0 +1,16 @@
+.addButton {
+    letter-spacing: 0.5px;
+    padding: 1em 2em;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    background: #ffcc33;
+    cursor: pointer;
+    margin-top: 2em;
+    border: none;
+    transition: background 0.3s;
+}
+
+.addButton:hover {
+    background: #f5b700;
+}
