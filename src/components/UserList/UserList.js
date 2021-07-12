@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import StudentLists from '../StudentLists/StudentLists'
 import Form from '../Form/Form'
 import Heading from '../Heading/Heading'
-import SearchBar from '../SearchBar/SearchBar'
 import { users } from '../../data/users'
 import SearchedListStudents from '../SearchedListStudents/SearchedListStudents'
 
@@ -123,13 +122,11 @@ const UserList = (props) => {
                 showEditBtnSearchStudent={showEditBtnSearchStudent}
                 showEditBtnMainListStudent={showEditBtnMainListStudent}
                 onSaveHandler={onSaveHandler}
-            />
-            <SearchBar
-                studentDetails={studentDetails}
                 onSearchStudent={onSearchHandler}
                 setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
                 setShowEditBtnSearchStudent={setShowEditBtnSearchStudent}
-                onCleanSearchlist={onCleanSearchlist} />
+                onCleanSearchlist={onCleanSearchlist}
+            />
             <SearchedListStudents
                 searchedStudentList={searchedStudentList}
                 showCloseBtnSearchStudent={showCloseBtnSearchStudent}

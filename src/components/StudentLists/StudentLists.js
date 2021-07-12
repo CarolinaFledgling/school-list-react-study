@@ -7,7 +7,7 @@ import styles from './StudentsLists.module.scss'
 
 
 
-function StudentsLists({ users, studentDetails, onDeleteStudent, showCloseBtnSearchStudent, showEditBtnMainListStudent, showCloseBtnMainListStudent, onSaveHandler, showEditBtnSearchStudent }) {
+function StudentsLists({ onCleanSearchlist, setShowEditBtnSearchStudent, setShowCloseBtnSearchStudent, onSearchStudent, users, studentDetails, onDeleteStudent, showCloseBtnSearchStudent, showEditBtnMainListStudent, showCloseBtnMainListStudent, onSaveHandler, showEditBtnSearchStudent }) {
 
     return (
         <div>
@@ -24,7 +24,13 @@ function StudentsLists({ users, studentDetails, onDeleteStudent, showCloseBtnSea
                     showEditBtnMainListStudent={showEditBtnMainListStudent}
                     onSaveHandler={onSaveHandler}
                 />
-                <SearchBar />
+                <SearchBar
+                    studentDetails={studentDetails}
+                    onSearchStudent={onSearchStudent}
+                    setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
+                    setShowEditBtnSearchStudent={setShowEditBtnSearchStudent}
+                    onCleanSearchlist={onCleanSearchlist}
+                />
             </div>
         </div>
     )
