@@ -1,4 +1,4 @@
-import React, { useRef, useEffect} from 'react'
+import React, { useRef, useEffect } from 'react'
 import styles from './EditingTemplate.module.scss'
 import SaveButton from '../SaveButton/SaveButton'
 import EditButton from '../EditButton/EditButton'
@@ -31,6 +31,7 @@ export default function EditingTemplate({ setEditing,
 
     useEffect(() => {
         console.log('inputREF inputDOM', inputRef.current)
+        inputRef.current.focus() // dlaczego działa to tutaj a nie w funkcji ?
     })
 
     return (
@@ -53,7 +54,7 @@ export default function EditingTemplate({ setEditing,
                     <input className={styles.input} value={inputSaveAttendace} onChange={(e) => setInputSaveAttendace(e.target.value)} id="input-name" type="text" />
                 </li>
                 <li>
-                    <label htmlfor="active">Active</label>
+                    <label htmlFor="active">Active</label>
                     <input
                         className={styles.checkboxInput}
                         type="checkbox"
