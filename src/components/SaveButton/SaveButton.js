@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './SaveButton.module.scss'
 
 export default function SaveButton({ setEditing, onSaveHandler, id, inputSaveName, inputSaveSurname, inputSaveAttendace, showEditBtnMainListStudent, inputSaveIsActive, showEditBtnSearchStudent }) {
 
@@ -8,8 +9,8 @@ export default function SaveButton({ setEditing, onSaveHandler, id, inputSaveNam
     }
     return (
         <div>
-            {showEditBtnSearchStudent === true ? <button type='button' onClick={handlerSaveStudent}>save</button> : null}
-            {showEditBtnMainListStudent === true ? <button type='button' onClick={handlerSaveStudent}>save</button> : null}
+            {showEditBtnSearchStudent === true ? <button className={styles.button} type='button' onClick={handlerSaveStudent}>save</button> : null}
+            {showEditBtnMainListStudent === true ? <button className={styles.button} type='button' onClick={handlerSaveStudent}>save</button> : null}
         </div>
     )
 }

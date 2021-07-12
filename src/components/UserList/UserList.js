@@ -28,9 +28,6 @@ const UserList = (props) => {
 
 
 
-
-
-
     // added a new student to the list
     const onSubmitHandler = (formData) => {
         console.log('student po dodaniu', formData)

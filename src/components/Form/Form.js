@@ -51,7 +51,9 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
         setactiveCheckboxInput(true)
     }
     return (
+
         <div className={styles.container} >
+
             <form className={styles.form} >
                 <div>
                     <label className={styles.label} htmlfor='name'>Name</label>
@@ -85,8 +87,10 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
                         placeholder='%' />
                 </div>
                 <div>
-                    <label htmlfor="active">Active</label>
+                    <label className={styles.checkboxLabel} htmlfor="active">Active</label>
                     <input
+
+                        className={styles.checkboxInput}
                         type="checkbox"
                         name="active"
                         checked={activeCheckboxInput}
