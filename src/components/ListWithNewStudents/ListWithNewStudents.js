@@ -7,7 +7,7 @@ export default function ListWithNewStudents({ studentDetails, onDeleteStudent, s
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.titleList}>List with new students</h2>
+            <h2 className={styles.titleList}>List with new students ⬇️</h2>
             {// zapytac w ul : role="list" className="list-newStudent" aria-labelledby="list-heading"
             }
             <div className={styles.detailsStudent}>

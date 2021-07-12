@@ -42,7 +42,7 @@ export default function SearchBar({ showEditBtnSearchStudent, showCloseBtnSearch
     return (
         <div className={styles.container}>
             <div className={styles.searchBar}>
-                <h2 className={styles.title}>Serach Student</h2>
+                <h2 className={styles.title}>Serach Student 🔍</h2>
                 <label className={styles.label} htmlfor='search-student'>Search: </label>
                 <input className={styles.input} value={inputSearchStudent} onChange={handleOnChangeSearchStudent} type="text" id='search-student' placeholder='name' />
             </div>
