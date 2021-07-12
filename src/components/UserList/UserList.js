@@ -126,12 +126,9 @@ const UserList = (props) => {
                 setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
                 setShowEditBtnSearchStudent={setShowEditBtnSearchStudent}
                 onCleanSearchlist={onCleanSearchlist}
+                searchedStudentList={searchedStudentList}    
             />
-            <SearchedListStudents
-                searchedStudentList={searchedStudentList}
-                showCloseBtnSearchStudent={showCloseBtnSearchStudent}
-                showEditBtnSearchStudent={showEditBtnSearchStudent}
-            />
+
         </div>
     )
 }

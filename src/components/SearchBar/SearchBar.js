@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import CleanSearchedListBtn from '../CleanSearchedListBtn/CleanSearchedListBtn'
+import SearchedListStudents from '../SearchedListStudents/SearchedListStudents'
 import styles from './SearchBar.module.scss'
 
 
 
 
 
-export default function SearchBar({ studentDetails, onSearchStudent, setShowCloseBtnSearchStudent, onCleanSearchlist, setShowEditBtnSearchStudent }) {
+export default function SearchBar({ showEditBtnSearchStudent, showCloseBtnSearchStudent, searchedStudentList, studentDetails, onSearchStudent, setShowCloseBtnSearchStudent, onCleanSearchlist, setShowEditBtnSearchStudent }) {
 
     const [inputSearchStudent, setinputSearchStudent] = useState('')
 
@@ -39,11 +40,20 @@ export default function SearchBar({ studentDetails, onSearchStudent, setShowClos
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Serach Student</h2>
-            <label className={styles.label} htmlfor='search-student'>Search: </label>
-            <input className={styles.input} value={inputSearchStudent} onChange={handleOnChangeSearchStudent} type="text" id='search-student' placeholder='name' />
-            <button className={styles.buttonSearch} onClick={handleSearchStudent} type='submit'>Search</button>
-            <CleanSearchedListBtn onCleanSearchedList={handleCleanSearchedList} />
+            <div className={styles.searchBar}>
+                <h2 className={styles.title}>Serach Student</h2>
+                <label className={styles.label} htmlfor='search-student'>Search: </label>
+                <input className={styles.input} value={inputSearchStudent} onChange={handleOnChangeSearchStudent} type="text" id='search-student' placeholder='name' />
+                <button className={styles.buttonSearch} onClick={handleSearchStudent} type='submit'>Search</button>
+                <CleanSearchedListBtn onCleanSearchedList={handleCleanSearchedList} />
+            </div>
+            <div className={styles.searchedList}>
+                <SearchedListStudents
+                    searchedStudentList={searchedStudentList}
+                    showCloseBtnSearchStudent={showCloseBtnSearchStudent}
+                    showEditBtnSearchStudent={showEditBtnSearchStudent}
+                />
+            </div>
         </div>
     )
 }
