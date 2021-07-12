@@ -1,10 +1,13 @@
 .container {
-    padding: 10px;
+    padding: 2em 0;
     font-size: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 3em;
+    width: 100%;
+    background-color: #b4d5af;
+    border-radius: 10px;
 }
 
 .label {
@@ -27,14 +30,14 @@
 }
 
 .form {
-    margin: 0 auto;
     padding: 2em;
     display: flex;
     flex-direction: column;
     width: 500px;
-    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #f5b700;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem black;
+    background-color: #fff;
 }
 
-.checkboxInput{
+.checkboxInput {
     margin-left: 1em;
 }

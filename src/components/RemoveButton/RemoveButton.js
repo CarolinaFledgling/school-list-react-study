@@ -11,8 +11,8 @@ function RemoveButton({ onDeleteStudent, id, showCloseBtnSearchStudent, showClos
     return (
         <div>
             {/* zapytac sie dlaczego btninViewTemp klasa nie dziala w stylach  */}
-            {showCloseBtnSearchStudent === true ? <button className={`${styles.button} ${styles.btninViewTemp}`} type='button' onClick={handlerDeleteStudent}>X</button> : null}
-            {showCloseBtnMainListStudent === true ? <button className={styles.button} type='button' onClick={handlerDeleteStudent}>X</button> : null}
+            {showCloseBtnSearchStudent === true ? <button className={`${styles.button} ${styles.btninViewTemp}`} type='button' onClick={handlerDeleteStudent}>Delete</button> : null}
+            {showCloseBtnMainListStudent === true ? <button className={styles.button} type='button' onClick={handlerDeleteStudent}>Delete</button> : null}
         </div>
     )
 }

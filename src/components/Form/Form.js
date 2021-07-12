@@ -53,7 +53,7 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
     return (
 
         <div className={styles.container} >
-
+            <h2>Add a new student to the list</h2>
             <form className={styles.form} >
                 <div>
                     <label className={styles.label} htmlfor='name'>Name</label>
@@ -98,7 +98,6 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
                 </div>
                 <AddButton handlerAddPerson={handlerAddPerson} />
             </form>
-
         </ div>
     )
 }
