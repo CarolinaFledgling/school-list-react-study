@@ -11,7 +11,5 @@ function AddButton({ handlerAddPerson }) {
     )
 }
 
-
-
 export default AddButton
 

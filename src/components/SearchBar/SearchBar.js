@@ -6,8 +6,6 @@ import SearchButton from '../SearchButton/SearchButton'
 
 
 
-
-
 export default function SearchBar({ showEditBtnSearchStudent, showCloseBtnSearchStudent, searchedStudentList, studentDetails, onSearchStudent, setShowCloseBtnSearchStudent, onCleanSearchlist, setShowEditBtnSearchStudent }) {
 
     const [inputSearchStudent, setinputSearchStudent] = useState('')

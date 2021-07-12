@@ -64,7 +64,6 @@ export default function EditingTemplate({ setEditing,
                     showEditBtnMainListStudent={showEditBtnMainListStudent}
                     setEditing={setEditing}
                 />
-
                 <RemoveButton
                     onDeleteStudent={onDeleteStudent}
                     id={id}
@@ -72,8 +71,6 @@ export default function EditingTemplate({ setEditing,
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
                 />
                 <EditButton setEditing={setEditing} isEditing={isEditing} />
-                {/* <button onClick={() => setEditing(!isEditing)}>Edit</button> */}
-
             </div>
 
         </div>
