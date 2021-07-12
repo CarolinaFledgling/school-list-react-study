@@ -29,7 +29,6 @@ const UserList = (props) => {
 
     // added a new student to the list
     const onSubmitHandler = (formData) => {
-        console.log('student po dodaniu', formData)
         setStudentDetails([...studentDetails, formData])
     }
 
@@ -67,7 +66,6 @@ const UserList = (props) => {
         foundElem.surname = inputSaveSurname
         foundElem.attendace = inputSaveAttendace
         foundElem.isActive = inputSaveIsActive
-        console.log('foundElem.isActive', foundElem.isActive)
         setStudentDetails([...studentDetails])
 
 
@@ -85,7 +83,6 @@ const UserList = (props) => {
     }, 0)
 
     const namberOfStudentsActive = countActiveStudent === 0 ? ' 0 active students' : ` ${countActiveStudent} ✔️`;
-    console.log(studentDetails)
 
 
     // Amount of InActive and Inactive students

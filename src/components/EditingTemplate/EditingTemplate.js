@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect} from 'react'
 import styles from './EditingTemplate.module.scss'
 import SaveButton from '../SaveButton/SaveButton'
 import EditButton from '../EditButton/EditButton'
@@ -23,12 +23,22 @@ export default function EditingTemplate({ setEditing,
     isEditing,
 
 }) {
+
+    // pierwsze uzycie useRef useEffect
+
+    const inputRef = useRef();
+
+
+    useEffect(() => {
+        console.log('inputREF inputDOM', inputRef.current)
+    })
+
     return (
         <div className={styles.itemStudents}>
             <ul className={styles.boxFields}>
                 <li className="fields">
                     <label className={styles.label} htmlFor="input-name">Name:&nbsp;</label>
-                    <input className={styles.input} value={inputSaveName} onChange={(e) => setInputSaveName(e.target.value)} id="input-name" type="text" />
+                    <input ref={inputRef} className={styles.input} value={inputSaveName} onChange={(e) => setInputSaveName(e.target.value)} id="input-name" type="text" />
                 </li>
                 <li className="fields">
                     <label className={styles.label} htmlFor="input-name">
@@ -70,7 +80,7 @@ export default function EditingTemplate({ setEditing,
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
                 />
-                <EditButton setEditing={setEditing} isEditing={isEditing} />
+                <EditButton inputRef={inputRef} setEditing={setEditing} isEditing={isEditing} />
             </div>
 
         </div>

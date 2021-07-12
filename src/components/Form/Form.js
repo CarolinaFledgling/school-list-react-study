@@ -38,12 +38,10 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
         }
 
         onSubmit(newStudent)
-        console.log('dodany student', newStudent)
         setshowCloseBtnMainListStudent(true)
         setShowCloseBtnSearchStudent(false)
         setShowEditBtnSearchStudent(false)
         setshowEditBtnMainListStudent(true)
-
         setInputName('');
         setInputSurname('');
         setInputAttendace('');

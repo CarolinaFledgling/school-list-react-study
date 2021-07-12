@@ -4,6 +4,7 @@ import styles from './AddButton.module.scss'
 
 
 function AddButton({ handlerAddPerson }) {
+    
     return (
         <div>
             <button className={styles.addButton} type='submit' onClick={handlerAddPerson}>Add student</button>
