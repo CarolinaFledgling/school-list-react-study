@@ -48,7 +48,6 @@ export default function StudentInfo({ isActive, name, surname, attendace, onDele
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
                     setEditing={setEditing}
                     isEditing={isEditing}
-
                 />
             )
             }

@@ -6,11 +6,11 @@ export default function ListWithNewStudents({ studentDetails, onDeleteStudent, s
 
 
     return (
-        <div>
+        <div className={styles.container}>
             <h2 className={styles.titleList}>List with new students</h2>
             {// zapytac w ul : role="list" className="list-newStudent" aria-labelledby="list-heading"
             }
-            <ul className={styles.list}>
+            <div className={styles.detailsStudent}>
                 {studentDetails.map((student) => {
                     return <StudentInfo
                         onDeleteStudent={onDeleteStudent}
@@ -27,7 +27,7 @@ export default function ListWithNewStudents({ studentDetails, onDeleteStudent, s
 
                     />
                 })}
-            </ul>
+            </div>
         </div>
     )
 }

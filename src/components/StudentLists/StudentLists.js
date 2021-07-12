@@ -1,18 +1,20 @@
 import React from 'react'
 import ListWithCurrentStudents from '../ListWithCurrentStudents/ListWithCurrentStudents'
 import ListWithNewStudents from '../ListWithNewStudents/ListWithNewStudents'
+import SearchBar from '../SearchBar/SearchBar'
+import styles from './StudentsLists.module.scss'
 
 
 
-function StudentsListItem({ users, studentDetails, onDeleteStudent, showCloseBtnSearchStudent,showEditBtnMainListStudent, showCloseBtnMainListStudent, onSaveHandler, showEditBtnSearchStudent }) {
+
+function StudentsLists({ users, studentDetails, onDeleteStudent, showCloseBtnSearchStudent, showEditBtnMainListStudent, showCloseBtnMainListStudent, onSaveHandler, showEditBtnSearchStudent }) {
 
     return (
         <div>
             <div>
                 {/* <ListWithCurrentStudents users={users} /> */}
             </div>
-            <div>
-                <hr></hr>
+            <div className={styles.container}>
                 <ListWithNewStudents
                     onDeleteStudent={onDeleteStudent}
                     studentDetails={studentDetails}
@@ -21,8 +23,8 @@ function StudentsListItem({ users, studentDetails, onDeleteStudent, showCloseBtn
                     showEditBtnSearchStudent={showEditBtnSearchStudent}
                     showEditBtnMainListStudent={showEditBtnMainListStudent}
                     onSaveHandler={onSaveHandler}
-
                 />
+                <SearchBar />
             </div>
         </div>
     )
@@ -30,4 +32,4 @@ function StudentsListItem({ users, studentDetails, onDeleteStudent, showCloseBtn
 
 
 
-export default StudentsListItem
+export default StudentsLists
