@@ -24,15 +24,32 @@ export default function EditingTemplate({ setEditing,
 
 }) {
 
-    // pierwsze uzycie useRef useEffect
+    // pierwsze uzycie useRef useEffect , dodanie focus na pierwszy input
+    // przy kazdym renderze wywoła się funkcha przekazana do useeffect jesli nie podamy tablicy zaleznosci
 
     const inputRef = useRef();
 
 
+    // useEffect(() => {
+    //     console.log('inputREF inputDOM', inputRef.current)
+    //     inputRef.current.focus() // dlaczego to tez działa ?
+    // })
+
+    // Set focus when input first inout to edit is showing 
     useEffect(() => {
-        console.log('inputREF inputDOM', inputRef.current)
-        inputRef.current.focus() // dlaczego działa to tutaj a nie w funkcji ?
-    })
+        if (isEditing) {
+            inputRef.current.focus()
+        }
+    }, [isEditing])
+
+
+
+    //  added update document.title when isEditing changed
+    useEffect(() => {
+        document.title = isEditing ? `Edit name: ${inputSaveName}` : 'no editing'
+    }, [isEditing, inputSaveName])
+
+
 
     return (
         <div className={styles.itemStudents}>

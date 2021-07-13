@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import EditingTemplate from '../EditingTemplate/EditingTemplate'
 import ViewTemplate from '../ViewTemplate/ViewTemplate'
 import styles from './StudentInfo.module.scss'
@@ -12,6 +12,7 @@ export default function StudentInfo({ isActive, name, surname, attendace, onDele
     const [inputSaveIsActive, setInputSaveIsActive] = useState(isActive)
     const [isEditing, setEditing] = useState(false);
 
+  
 
     return (
 
