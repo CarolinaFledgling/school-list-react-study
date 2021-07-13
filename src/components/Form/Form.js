@@ -4,15 +4,18 @@ import AddButton from '../AddButton/AddButton'
 import { v4 as uuidv4 } from 'uuid';
 
 
-function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainListStudent, setShowCloseBtnSearchStudent, setShowEditBtnSearchStudent }) {
+function Form({ onSubmit, flags }) {
+    const {
+        setshowCloseBtnMainListStudent,
+        setShowCloseBtnSearchStudent,
+        setShowEditBtnSearchStudent,
+        setshowEditBtnMainListStudent,
+    } = flags
 
     const [inputName, setInputName] = useState('')
     const [inputSurname, setInputSurname] = useState('')
     const [inputAttendace, setInputAttendace] = useState('')
     const [activeCheckboxInput, setactiveCheckboxInput] = useState(true)
-
-
-
 
 
     const handlerAddPerson = (e) => {
@@ -34,7 +37,6 @@ function Form({ onSubmit, setshowCloseBtnMainListStudent, setshowEditBtnMainList
             attendace: inputAttendace,
             isActive: activeCheckboxInput,
             id: uuidv4(),
-
         }
 
         onSubmit(newStudent)

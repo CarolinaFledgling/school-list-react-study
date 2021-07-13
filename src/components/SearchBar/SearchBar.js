@@ -6,7 +6,18 @@ import SearchButton from '../SearchButton/SearchButton'
 
 
 
-export default function SearchBar({ showEditBtnSearchStudent, showCloseBtnSearchStudent, searchedStudentList, studentDetails, onSearchStudent, setShowCloseBtnSearchStudent, onCleanSearchlist, setShowEditBtnSearchStudent }) {
+export default function SearchBar({ searchedStudentList, studentDetails, handlers, flags }) {
+
+    const {
+        onSearchStudent,
+        onCleanSearchlist,
+    } = handlers
+    const {
+        setShowCloseBtnSearchStudent,
+        setShowEditBtnSearchStudent,
+        showCloseBtnSearchStudent,
+        showEditBtnSearchStudent,
+    } = flags
 
     const [inputSearchStudent, setinputSearchStudent] = useState('')
 
@@ -41,8 +52,13 @@ export default function SearchBar({ showEditBtnSearchStudent, showCloseBtnSearch
         <div className={styles.container}>
             <div className={styles.searchBar}>
                 <h2 className={styles.title}>Serach Student 🔍</h2>
-                <label className={styles.label} htmlfor='search-student'>Search: </label>
-                <input className={styles.input} value={inputSearchStudent} onChange={handleOnChangeSearchStudent} type="text" id='search-student' placeholder='name' />
+                <label className={styles.label} htmlfor='search-student'>Search:</label>
+                <input
+                    className={styles.input}
+                    value={inputSearchStudent}
+                    onChange={handleOnChangeSearchStudent}
+                    type="text" id='search-student'
+                    placeholder='name' />
             </div>
             <div className={styles.searchButtons}>
                 <SearchButton onSearchStudent={handleSearchStudent} />

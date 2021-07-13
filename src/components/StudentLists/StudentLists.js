@@ -7,7 +7,22 @@ import styles from './StudentsLists.module.scss'
 
 
 
-function StudentsLists({ searchedStudentList, onCleanSearchlist, setShowEditBtnSearchStudent, setShowCloseBtnSearchStudent, onSearchStudent, users, studentDetails, onDeleteStudent, showCloseBtnSearchStudent, showEditBtnMainListStudent, showCloseBtnMainListStudent, onSaveHandler, showEditBtnSearchStudent }) {
+function StudentsLists({ studentDetails, searchedStudentList, users, flags, handlers }) {
+    const {
+        showCloseBtnSearchStudent,
+        showCloseBtnMainListStudent,
+        showEditBtnSearchStudent,
+        showEditBtnMainListStudent,
+        setShowCloseBtnSearchStudent,
+        setShowEditBtnSearchStudent,
+    } = flags
+
+    const {
+        onCleanSearchlist,
+        onSearchStudent,
+        onDeleteStudent,
+        onSaveHandler,
+    } = handlers
 
     return (
         <div>
@@ -16,23 +31,31 @@ function StudentsLists({ searchedStudentList, onCleanSearchlist, setShowEditBtnS
             </div>
             <div className={styles.container}>
                 <ListWithNewStudents
-                    onDeleteStudent={onDeleteStudent}
                     studentDetails={studentDetails}
-                    showCloseBtnSearchStudent={showCloseBtnSearchStudent}
-                    showCloseBtnMainListStudent={showCloseBtnMainListStudent}
-                    showEditBtnSearchStudent={showEditBtnSearchStudent}
-                    showEditBtnMainListStudent={showEditBtnMainListStudent}
-                    onSaveHandler={onSaveHandler}
+                    handlers={{
+                        onDeleteStudent,
+                        onSaveHandler,
+                    }}
+                    flags={{
+                        showCloseBtnSearchStudent,
+                        showCloseBtnMainListStudent,
+                        showEditBtnSearchStudent,
+                        showEditBtnMainListStudent,
+                    }}
                 />
                 <SearchBar
                     studentDetails={studentDetails}
-                    onSearchStudent={onSearchStudent}
-                    setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
-                    setShowEditBtnSearchStudent={setShowEditBtnSearchStudent}
-                    onCleanSearchlist={onCleanSearchlist}
                     searchedStudentList={searchedStudentList}
-                    showCloseBtnSearchStudent={showCloseBtnSearchStudent}
-                    showEditBtnSearchStudent={showEditBtnSearchStudent}
+                    handlers={{
+                        onSearchStudent,
+                        onCleanSearchlist,
+                    }}
+                    flags={{
+                        setShowCloseBtnSearchStudent,
+                        setShowEditBtnSearchStudent,
+                        showCloseBtnSearchStudent,
+                        showEditBtnSearchStudent,
+                    }}
                 />
             </div>
         </div>

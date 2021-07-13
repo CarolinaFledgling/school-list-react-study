@@ -3,12 +3,9 @@ import StudentLists from '../StudentLists/StudentLists'
 import Form from '../Form/Form'
 import Heading from '../Heading/Heading'
 import { users } from '../../data/users'
-import SearchedListStudents from '../SearchedListStudents/SearchedListStudents'
-
 
 
 // CRUD
-
 // Create
 // Read 
 // Update 
@@ -33,8 +30,7 @@ const UserList = (props) => {
     }
 
     // handle delete student 
-
-    const handlerDeleteStudent = (id) => {
+    const onDeleteStudent = (id) => {
         const filterdStudent = studentDetails.filter((student) => {
             return student.id !== id
         })
@@ -43,7 +39,7 @@ const UserList = (props) => {
     }
 
     // handle Searched student
-    const onSearchHandler = (searchedStudent) => {
+    const onSearchStudent = (searchedStudent) => {
         setsearchedStudentList(searchedStudent)
     }
 
@@ -67,8 +63,6 @@ const UserList = (props) => {
         foundElem.attendace = inputSaveAttendace
         foundElem.isActive = inputSaveIsActive
         setStudentDetails([...studentDetails])
-
-
     }
 
 
@@ -102,28 +96,38 @@ const UserList = (props) => {
     return (
 
         <div>
-            <Heading headingText={headingText} namberOfStudentsActive={namberOfStudentsActive} namberOfStudentsInactive={namberOfStudentsInactive} />
+            <Heading
+                headingText={headingText}
+                namberOfStudentsActive={namberOfStudentsActive}
+                namberOfStudentsInactive={namberOfStudentsInactive} />
             <Form
+                flags={{
+                    setshowCloseBtnMainListStudent,
+                    setShowCloseBtnSearchStudent,
+                    setShowEditBtnSearchStudent,
+                    setshowEditBtnMainListStudent,
+                }}
                 onSubmit={onSubmitHandler}
-                setshowCloseBtnMainListStudent={setshowCloseBtnMainListStudent}
-                setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
-                setShowEditBtnSearchStudent={setShowEditBtnSearchStudent}
-                setshowEditBtnMainListStudent={setshowEditBtnMainListStudent}
+
             />
             <StudentLists
-                onDeleteStudent={handlerDeleteStudent}
                 studentDetails={studentDetails}
+                searchedStudentList={searchedStudentList}
                 users={users}
-                showCloseBtnSearchStudent={showCloseBtnSearchStudent}
-                showCloseBtnMainListStudent={showCloseBtnMainListStudent}
-                showEditBtnSearchStudent={showEditBtnSearchStudent}
-                showEditBtnMainListStudent={showEditBtnMainListStudent}
-                onSaveHandler={onSaveHandler}
-                onSearchStudent={onSearchHandler}
-                setShowCloseBtnSearchStudent={setShowCloseBtnSearchStudent}
-                setShowEditBtnSearchStudent={setShowEditBtnSearchStudent}
-                onCleanSearchlist={onCleanSearchlist}
-                searchedStudentList={searchedStudentList}    
+                flags={{
+                    showCloseBtnSearchStudent,
+                    showCloseBtnMainListStudent,
+                    showEditBtnSearchStudent,
+                    showEditBtnMainListStudent,
+                    setShowCloseBtnSearchStudent,
+                    setShowEditBtnSearchStudent,
+                }}
+                handlers={{
+                    onCleanSearchlist,
+                    onSearchStudent,
+                    onDeleteStudent,
+                    onSaveHandler,
+                }}
             />
 
         </div>
