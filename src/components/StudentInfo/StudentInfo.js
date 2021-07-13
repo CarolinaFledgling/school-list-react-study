@@ -5,14 +5,23 @@ import styles from './StudentInfo.module.scss'
 
 
 
-export default function StudentInfo({ isActive, name, surname, attendace, onDeleteStudent, id, showCloseBtnSearchStudent, showEditBtnSearchStudent, showCloseBtnMainListStudent, showEditBtnMainListStudent, onSaveHandler }) {
+export default function StudentInfo({ student, handlers, flags }) {
+    const { id, name, surname, attendace, isActive } = student
+    const { onDelete, onSave } = handlers
+    const {
+        showCloseBtnSearchStudent,
+        showEditBtnSearchStudent,
+        showCloseBtnMainListStudent,
+        showEditBtnMainListStudent
+    } = flags
+
     const [inputSaveName, setInputSaveName] = useState(name)
     const [inputSaveSurname, setInputSaveSurname] = useState(surname)
     const [inputSaveAttendace, setInputSaveAttendace] = useState(attendace)
     const [inputSaveIsActive, setInputSaveIsActive] = useState(isActive)
     const [isEditing, setEditing] = useState(false);
 
-  
+
 
     return (
 
@@ -27,12 +36,12 @@ export default function StudentInfo({ isActive, name, surname, attendace, onDele
                     setInputSaveAttendace={setInputSaveAttendace}
                     inputSaveIsActive={inputSaveIsActive}
                     setInputSaveIsActive={setInputSaveIsActive}
-                    onSaveHandler={onSaveHandler}
+                    onSaveHandler={onSave}
                     id={id}
                     showEditBtnSearchStudent={showEditBtnSearchStudent}
                     showEditBtnMainListStudent={showEditBtnMainListStudent}
                     setEditing={setEditing}
-                    onDeleteStudent={onDeleteStudent}
+                    onDeleteStudent={onDelete}
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
                     isEditing={isEditing}
@@ -43,7 +52,7 @@ export default function StudentInfo({ isActive, name, surname, attendace, onDele
                     inputSaveSurname={inputSaveSurname}
                     inputSaveAttendace={inputSaveAttendace}
                     inputSaveIsActive={inputSaveIsActive}
-                    onDeleteStudent={onDeleteStudent}
+                    onDeleteStudent={onDelete}
                     id={id}
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}

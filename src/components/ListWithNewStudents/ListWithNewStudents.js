@@ -13,19 +13,19 @@ export default function ListWithNewStudents({ studentDetails, onDeleteStudent, s
             <div className={styles.detailsStudent}>
                 {studentDetails.map((student) => {
                     return <StudentInfo
-                        onDeleteStudent={onDeleteStudent}
-                        id={student.id}
-                        name={student.name}
-                        surname={student.surname}
-                        attendace={student.attendace}
-                        isActive={student.isActive}
-                        showCloseBtnSearchStudent={showCloseBtnSearchStudent}
-                        showCloseBtnMainListStudent={showCloseBtnMainListStudent}
-                        showEditBtnSearchStudent={showEditBtnSearchStudent}
-                        showEditBtnMainListStudent={showEditBtnMainListStudent}
-                        onSaveHandler={onSaveHandler}
-
+                        student={student}
+                        flags={{
+                            showCloseBtnSearchStudent,
+                            showCloseBtnMainListStudent,
+                            showEditBtnSearchStudent,
+                            showEditBtnMainListStudent,
+                        }}
+                        handlers={{
+                            onDelete: onDeleteStudent,
+                            onSave: onSaveHandler,
+                        }}
                     />
+
                 })}
             </div>
         </div>
