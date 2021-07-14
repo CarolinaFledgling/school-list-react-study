@@ -6,8 +6,9 @@ import styles from './StudentInfo.module.scss'
 
 
 export default function StudentInfo({ student, handlers, flags }) {
+    console.log('student', student)
     const { id, name, surname, attendace, isActive } = student
-    const { onDelete, onSave } = handlers
+
     const {
         showCloseBtnSearchStudent,
         showEditBtnSearchStudent,
@@ -36,12 +37,13 @@ export default function StudentInfo({ student, handlers, flags }) {
                     setInputSaveAttendace={setInputSaveAttendace}
                     inputSaveIsActive={inputSaveIsActive}
                     setInputSaveIsActive={setInputSaveIsActive}
-                    onSaveHandler={onSave}
+                    onSaveHandler={handlers?.onSave}
                     id={id}
                     showEditBtnSearchStudent={showEditBtnSearchStudent}
                     showEditBtnMainListStudent={showEditBtnMainListStudent}
                     setEditing={setEditing}
-                    onDeleteStudent={onDelete}
+
+                    onDeleteStudent={handlers?.onDelete}
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}
                     isEditing={isEditing}
@@ -52,7 +54,7 @@ export default function StudentInfo({ student, handlers, flags }) {
                     inputSaveSurname={inputSaveSurname}
                     inputSaveAttendace={inputSaveAttendace}
                     inputSaveIsActive={inputSaveIsActive}
-                    onDeleteStudent={onDelete}
+                    onDeleteStudent={handlers?.onDelete}
                     id={id}
                     showCloseBtnSearchStudent={showCloseBtnSearchStudent}
                     showCloseBtnMainListStudent={showCloseBtnMainListStudent}

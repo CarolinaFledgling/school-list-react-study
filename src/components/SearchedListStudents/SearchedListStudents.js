@@ -9,13 +9,12 @@ export default function SearchedListStudents({ searchedStudentList, showCloseBtn
             <div className={styles.container}>
                 {searchedStudentList.map((student) => {
                     return <StudentInfo
-                        id={student.id}
-                        name={student.name}
-                        surname={student.surname}
-                        attendace={student.attendace}
-                        isActive={student.isActive}
-                        showCloseBtnSearchStudent={showCloseBtnSearchStudent}
-                        showEditBtnSearchStudent={showEditBtnSearchStudent}
+                        student={student}
+                        flags={{
+                            showCloseBtnSearchStudent,
+                            showEditBtnSearchStudent,
+                        }}
+
                     />
                 })}
             </div>
